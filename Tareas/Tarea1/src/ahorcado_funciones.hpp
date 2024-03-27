@@ -14,6 +14,8 @@ void ver_diccionario(ahorcado listaPalabras[],int palabras_agregadas);
 //conseguir las letras de las palabra
 int conseguir_numero_aleatorio(int min, int max);
 //mostrar estado del juego(interfaz)
-void mostrar_estado(const ahorcado &juego);
+void mostrar_estado(ahorcado juego);
+//encontrar letra
+void encontrar_letra(ahorcado juego);
 
 #endif

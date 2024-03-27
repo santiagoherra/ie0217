@@ -38,11 +38,30 @@ int intentos;
     return intentos;
 };
 
-void mostrar_estado(const ahorcado juego){
+void mostrar_estado(ahorcado juego){
     cout << "Palabra a adivinar = " << juego.palabraAdivinada << endl;
     cout << "Intentos restantes = " << juego.intentos_max - juego.intentos_realizados << endl;
 };
 
+
+void encontrar_letra(ahorcado juego){
+    char letra;
+    cout << "Ingrese una letra " << endl;
+    cin >> letra;
+
+    bool acierto = false;
+    for(int i = 0; i < juego.palabra.length(); ++i){
+        if(juego.palabra[i] == letra){
+            juego.palabraAdivinada[i] = letra;
+            acierto = true;
+        }
+    }
+
+    if(acierto == false){
+        cout << "letra incorrecta = " << endl;
+        juego.intentos_realizados++;
+    }
+};
 
 void iniciarjuego(int intentos, string listaPalabras[], int palabras_agregadas){
     //consiguiendo la palabra para poder jugar
@@ -54,35 +73,19 @@ void iniciarjuego(int intentos, string listaPalabras[], int palabras_agregadas){
 
     juego.palabra = listaPalabras[numero_aleatorio];
 
-    int tamanno_palabra = juego.palabra.length();
-
-    juego.palabraAdivinada = string(tamanno_palabra,'_');
+    juego.palabraAdivinada = string(juego.palabra.length(),'_');
 
     //palabra a jugar ya conseguida en un array
 
-    char letra_elegida;
-
     do{
         //imprimiendo interfaz de juego:
-        cout << "Numero de intentos = " << juego.intentos_max - juego.intentos_realizados << endl;
-
-        for(int i = 0; i < tamanno_palabra ; ++i){
-            cout << "_ " << endl;
-        };
+        mostrar_estado(juego);
         
-        //logica de intercambir palabra.
+        //encontrar la letra adivinada
+        encontrar_letra(juego);
 
-        cout << "Ingrese una letra " << endl;
-        cin >> letra_elegida;
-
-        //funcion reemplazar letra
-
-        for(int i = 0; i < tamanno_palabra; ++i){
-            if(letra_elegida == array_letras[i]){
-
-            }
-        };
-
+        //verificar si termino juego
+        
 
 
 
