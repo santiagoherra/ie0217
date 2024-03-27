@@ -1,0 +1,14 @@
+#ifndef AHORCADO_HPP
+#define AHORCADO_HPP
+
+#include <iostream>
+#include <string>
+
+struct ahorcado{
+    std::string palabra;
+    std::string palabraAdivinada;
+    int intentos_max;
+    int intentos_realizados;
+};
+
+#endif
