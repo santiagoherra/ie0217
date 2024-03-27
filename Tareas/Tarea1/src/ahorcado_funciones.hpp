@@ -17,5 +17,7 @@ int conseguir_numero_aleatorio(int min, int max);
 void mostrar_estado(ahorcado juego);
 //encontrar letra
 void encontrar_letra(ahorcado juego);
+//termino el juego
+bool termino_juego(ahorcado juego);
 
 #endif

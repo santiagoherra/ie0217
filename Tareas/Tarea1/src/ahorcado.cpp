@@ -63,6 +63,14 @@ void encontrar_letra(ahorcado juego){
     }
 };
 
+bool termino_juego(ahorcado juego){
+
+};
+
+int conseguir_numero_aleatorio(int min, int max){
+
+};
+
 void iniciarjuego(int intentos, string listaPalabras[], int palabras_agregadas){
     //consiguiendo la palabra para poder jugar
     int numero_aleatorio = conseguir_numero_aleatorio(0,palabras_agregadas);
@@ -85,7 +93,7 @@ void iniciarjuego(int intentos, string listaPalabras[], int palabras_agregadas){
         encontrar_letra(juego);
 
         //verificar si termino juego
-        
+
 
 
 
