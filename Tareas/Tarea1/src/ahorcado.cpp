@@ -5,7 +5,7 @@
 using namespace std;
 
 std::string listaPalabras[100];
-int palabras_agregadas = 0;
+int palabras_agregadas = 0;//solucion a problema de variables definidas 2 veces en el sistema
 
 int dificultad(){
     int decision;
@@ -81,11 +81,11 @@ bool termino_juego(ahorcado* juego){
         cin >> palabra_ultimo_intento;
 
         if (juego->palabra == palabra_ultimo_intento){
-            cout << "Felicidades terminaste el juego en el ultimo intento"<< endl;
+            cout << "Felicidades acertaste la palabra, terminaste el juego en el ultimo intento"<< endl;
             return false;
         }
         else{
-            cout << "No adivinaste la palabra:( " << endl;
+            cout << "No adivinaste la palabra:( \n GAMEOVER" << endl;
             return false;
         }
         
@@ -107,7 +107,7 @@ void ver_palabras(const string listaPalabras[], int palabras_agregadas){
 
     for(int i = 0; i < palabras_agregadas; ++i){
 
-        cout << listaPalabras[i] << "\n" << endl;
+        cout << i+1 << ") " << listaPalabras[i] << "\n" << endl;
     };
 }
 
@@ -129,7 +129,21 @@ void iniciar_juego(int intentos, string listaPalabras[], int palabras_agregadas)
 
     ahorcado juego;
 
+    //condiciones adicionales para que se inicie el juego
+    //condiciones de intentos
+    if(intentos == 0){
+        intentos = dificultad();
+    };
+
     juego.intentos_max = intentos;
+
+    //condicion para agregar palabra si no se ha hecho
+
+    if(listaPalabras[0].empty()){
+        agregar_palabra(listaPalabras, palabras_agregadas);
+    }
+
+    //selecciona palabra para jugar
 
     juego.palabra = listaPalabras[numero_aleatorio];
 
@@ -145,8 +159,10 @@ void iniciar_juego(int intentos, string listaPalabras[], int palabras_agregadas)
         continuar = termino_juego(&juego);
         
         //encontrar la letra adivinada
+        if(continuar){
+        //condicion para que si se termina el juego no salte otra vez para pedir letra
         encontrar_letra(&juego);
-        
+        }
     }
     while(continuar);
     
