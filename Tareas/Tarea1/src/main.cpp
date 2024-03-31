@@ -2,7 +2,7 @@
 #include "ahorcado.hpp"
 #include <iostream>
 
-enum Opciones{
+enum Opciones{ // enum para las decisiones del menu
     DIFICULTAD = 1,
     INICIAR,
     AGREGAR_PALABRAS,
@@ -25,7 +25,7 @@ int main(){
         std::cout << "5) Salir del programa\n";
         std::cin >> opcion;
 
-        switch (opcion)
+        switch (opcion) //bucle para poder hacer el menu
         {
         case DIFICULTAD:
             intentos = dificultad();
