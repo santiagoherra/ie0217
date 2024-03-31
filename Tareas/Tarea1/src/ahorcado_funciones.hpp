@@ -7,11 +7,11 @@
 //elegir dificutad de juego
 int dificultad();
 //iniciar juego
-void iniciar_juego(int intentos, string listaPalabras[], int palabras_agregadas);
+void iniciar_juego(int intentos, std::string listaPalabras[], int palabras_agregadas);
 //funcion para reemplazar palabra en el juego
-void agregar_palabra(string listaPalabras[], int &palabras_agregadas);
+void agregar_palabra(std::string listaPalabras[], int &palabras_agregadas);
 //ver diccionario
-void ver_palabras(const string listaPalabras, int palabras_agregadas);
+void ver_palabras(const std::string listaPalabras[], int palabras_agregadas);
 //conseguir las letras de las palabra
 int conseguir_numero_aleatorio(int min, int max);
 //mostrar estado del juego(interfaz)

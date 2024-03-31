@@ -5,6 +5,8 @@ using namespace std;
 
 int dificultad(){
     int decision;
+    int intentos;
+
     cout << "Escogengiendo dificultad:\n 1) Facil (7 intentos)\n 2) Media (5 intentos)\n 3) Dificil (3 intentos)" << endl;
     cout << "Si no se escoge opcion se pondra en dificultad facil" << endl;
     cin >> decision;
@@ -14,8 +16,6 @@ int dificultad(){
         media,
         dificil
     };
-
-int intentos;
 
     switch (decision)
     {
@@ -84,7 +84,9 @@ bool termino_juego(ahorcado* juego){
             cout << "No adivinaste la palabra:( " << endl;
             return false;
         }
+        
     }
+    return true;
 };
 
 void agregar_palabra(string listaPalabras[], int &palabras_agregadas){

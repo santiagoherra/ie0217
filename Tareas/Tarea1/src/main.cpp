@@ -1,5 +1,4 @@
 #include "ahorcado_funciones.hpp"
-#include "ahorcado.hpp"
 #include <iostream>
 
 enum Opciones{ // enum para las decisiones del menu
