@@ -1,7 +1,11 @@
-#include "ahorcado_funciones.hpp"
+#include "ahorcado.hpp"
+
 #include <random>
 #include <string>
 using namespace std;
+
+std::string listaPalabras[100];
+int palabras_agregadas = 0;
 
 int dificultad(){
     int decision;
