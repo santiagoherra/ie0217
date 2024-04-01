@@ -1,0 +1,162 @@
+\hypertarget{ahorcado_8cpp}{}\doxysection{Referencia del Archivo /home/santiago/\+Documents/estructuras\+\_\+datos/ie0217/\+Tareas/\+Tarea1/src/ahorcado.cpp}
+\label{ahorcado_8cpp}\index{/home/santiago/Documents/estructuras\_datos/ie0217/Tareas/Tarea1/src/ahorcado.cpp@{/home/santiago/Documents/estructuras\_datos/ie0217/Tareas/Tarea1/src/ahorcado.cpp}}
+
+
+Descripcion de las funciones necesarias para el juego de ahorcado.  
+
+
+{\ttfamily \#include \char`\"{}ahorcado.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Dependencia gráfica adjunta para ahorcado.\+cpp\+:
+% FIG 0
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ahorcado_8cpp_a9cbe0d2a47dad23927f5d619a593f282}{dificultad}} ()
+\begin{DoxyCompactList}\small\item\em solucion a problema de variables definidas 2 veces en el sistema, declaracion por el extern \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ahorcado_8cpp_af29fd86082a1367e21ceb21bf0e02e01}{mostrar\+\_\+estado}} (\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$juego)
+\begin{DoxyCompactList}\small\item\em muestra el estado en que esta la palabra y cuantos intentos le quedan \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ahorcado_8cpp_afadb2c698baaf5568a8c375129198448}{encontrar\+\_\+letra}} (\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$juego)
+\begin{DoxyCompactList}\small\item\em encuentra la letra dentro de la palabra y la intercambia dependiendo si acerto \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ahorcado_8cpp_affd6a81bc3371ea9b5e0982c2e85dae8}{termino\+\_\+juego}} (\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$juego)
+\begin{DoxyCompactList}\small\item\em hace un checkeo si el juego ya termino, ademas de dar la opcion si se quedo sin intentos que se pueda ingresar la palabra como ultimo chance \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ahorcado_8cpp_acc8a1ac69a82acbd9fe7a295933e3a54}\label{ahorcado_8cpp_acc8a1ac69a82acbd9fe7a295933e3a54}} 
+void {\bfseries agregar\+\_\+palabra} (string \mbox{\hyperlink{ahorcado_8hpp_aeca41171ebe78effac0f34b886abdf94}{lista\+Palabras}}\mbox{[}$\,$\mbox{]}, int \&palabras\+\_\+agregadas)
+\item 
+\mbox{\Hypertarget{ahorcado_8cpp_a0e3142aee4470f93560d3d44fd51e738}\label{ahorcado_8cpp_a0e3142aee4470f93560d3d44fd51e738}} 
+void {\bfseries ver\+\_\+palabras} (const string \mbox{\hyperlink{ahorcado_8hpp_aeca41171ebe78effac0f34b886abdf94}{lista\+Palabras}}\mbox{[}$\,$\mbox{]}, int palabras\+\_\+agregadas)
+\item 
+int \mbox{\hyperlink{ahorcado_8cpp_a8244d9e3fae251dad9a498dcca409e8f}{conseguir\+\_\+numero\+\_\+aleatorio}} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Consigue un numero aleatorio para que la palabra que se escoge sea aleatoria. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ahorcado_8cpp_a00ec65f3d804e9c5b0f12ffe2985ec83}{iniciar\+\_\+juego}} (int intentos, string \mbox{\hyperlink{ahorcado_8hpp_aeca41171ebe78effac0f34b886abdf94}{lista\+Palabras}}\mbox{[}$\,$\mbox{]}, int palabras\+\_\+agregadas)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ahorcado_8cpp_aeca41171ebe78effac0f34b886abdf94}\label{ahorcado_8cpp_aeca41171ebe78effac0f34b886abdf94}} 
+std\+::string \mbox{\hyperlink{ahorcado_8cpp_aeca41171ebe78effac0f34b886abdf94}{lista\+Palabras}} \mbox{[}100\mbox{]}
+\begin{DoxyCompactList}\small\item\em Variables inicializadas de manera externa para el resto del programa.///. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ahorcado_8cpp_afe634b054fac4c8e78a00540e6983aa5}\label{ahorcado_8cpp_afe634b054fac4c8e78a00540e6983aa5}} 
+int {\bfseries palabras\+\_\+agregadas} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Descripcion de las funciones necesarias para el juego de ahorcado. 
+
+\begin{DoxyAuthor}{Autor}
+Santiago Herra \href{mailto:santiago.herra@ucr.ac.cr}{\texttt{ santiago.\+herra@ucr.\+ac.\+cr}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+2024-\/03-\/31
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{ahorcado_8cpp_a8244d9e3fae251dad9a498dcca409e8f}\label{ahorcado_8cpp_a8244d9e3fae251dad9a498dcca409e8f}} 
+\index{ahorcado.cpp@{ahorcado.cpp}!conseguir\_numero\_aleatorio@{conseguir\_numero\_aleatorio}}
+\index{conseguir\_numero\_aleatorio@{conseguir\_numero\_aleatorio}!ahorcado.cpp@{ahorcado.cpp}}
+\doxysubsubsection{\texorpdfstring{conseguir\_numero\_aleatorio()}{conseguir\_numero\_aleatorio()}}
+{\footnotesize\ttfamily int conseguir\+\_\+numero\+\_\+aleatorio (\begin{DoxyParamCaption}\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Consigue un numero aleatorio para que la palabra que se escoge sea aleatoria. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em min} & valor minimo a elegir \\
+\hline
+{\em max} & valor maximo a elegir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+int valor aleatorio que se eligio. 
+\end{DoxyReturn}
+generador de numeros aleatorios\mbox{\Hypertarget{ahorcado_8cpp_a9cbe0d2a47dad23927f5d619a593f282}\label{ahorcado_8cpp_a9cbe0d2a47dad23927f5d619a593f282}} 
+\index{ahorcado.cpp@{ahorcado.cpp}!dificultad@{dificultad}}
+\index{dificultad@{dificultad}!ahorcado.cpp@{ahorcado.cpp}}
+\doxysubsubsection{\texorpdfstring{dificultad()}{dificultad()}}
+{\footnotesize\ttfamily int dificultad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+solucion a problema de variables definidas 2 veces en el sistema, declaracion por el extern 
+
+seleccion de intentos que el jugador desea tener, simple switch case \mbox{\Hypertarget{ahorcado_8cpp_afadb2c698baaf5568a8c375129198448}\label{ahorcado_8cpp_afadb2c698baaf5568a8c375129198448}} 
+\index{ahorcado.cpp@{ahorcado.cpp}!encontrar\_letra@{encontrar\_letra}}
+\index{encontrar\_letra@{encontrar\_letra}!ahorcado.cpp@{ahorcado.cpp}}
+\doxysubsubsection{\texorpdfstring{encontrar\_letra()}{encontrar\_letra()}}
+{\footnotesize\ttfamily void encontrar\+\_\+letra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$}]{juego }\end{DoxyParamCaption})}
+
+
+
+encuentra la letra dentro de la palabra y la intercambia dependiendo si acerto 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em juego} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ahorcado_8cpp_a00ec65f3d804e9c5b0f12ffe2985ec83}\label{ahorcado_8cpp_a00ec65f3d804e9c5b0f12ffe2985ec83}} 
+\index{ahorcado.cpp@{ahorcado.cpp}!iniciar\_juego@{iniciar\_juego}}
+\index{iniciar\_juego@{iniciar\_juego}!ahorcado.cpp@{ahorcado.cpp}}
+\doxysubsubsection{\texorpdfstring{iniciar\_juego()}{iniciar\_juego()}}
+{\footnotesize\ttfamily void iniciar\+\_\+juego (\begin{DoxyParamCaption}\item[{int}]{intentos,  }\item[{string}]{lista\+Palabras\mbox{[}$\,$\mbox{]},  }\item[{int}]{palabras\+\_\+agregadas }\end{DoxyParamCaption})}
+
+para continuar o terminar juego
+
+condiciones adicionales para que se inicie el juego condiciones de intentos
+
+condicion para agregar palabra si no se ha hecho
+
+selecciona palabra para jugar
+
+palabra a jugar ya conseguida en un array
+
+imprimiendo interfaz de juego\+:
+
+encontrar la letra adivinada
+
+condicion para que si se termina el juego no salte otra vez para pedir letra\mbox{\Hypertarget{ahorcado_8cpp_af29fd86082a1367e21ceb21bf0e02e01}\label{ahorcado_8cpp_af29fd86082a1367e21ceb21bf0e02e01}} 
+\index{ahorcado.cpp@{ahorcado.cpp}!mostrar\_estado@{mostrar\_estado}}
+\index{mostrar\_estado@{mostrar\_estado}!ahorcado.cpp@{ahorcado.cpp}}
+\doxysubsubsection{\texorpdfstring{mostrar\_estado()}{mostrar\_estado()}}
+{\footnotesize\ttfamily void mostrar\+\_\+estado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$}]{juego }\end{DoxyParamCaption})}
+
+
+
+muestra el estado en que esta la palabra y cuantos intentos le quedan 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em juego} & es el struct con la informacion del juego actual \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ahorcado_8cpp_affd6a81bc3371ea9b5e0982c2e85dae8}\label{ahorcado_8cpp_affd6a81bc3371ea9b5e0982c2e85dae8}} 
+\index{ahorcado.cpp@{ahorcado.cpp}!termino\_juego@{termino\_juego}}
+\index{termino\_juego@{termino\_juego}!ahorcado.cpp@{ahorcado.cpp}}
+\doxysubsubsection{\texorpdfstring{termino\_juego()}{termino\_juego()}}
+{\footnotesize\ttfamily bool termino\+\_\+juego (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$}]{juego }\end{DoxyParamCaption})}
+
+
+
+hace un checkeo si el juego ya termino, ademas de dar la opcion si se quedo sin intentos que se pueda ingresar la palabra como ultimo chance 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em juego} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si el juego sigue 
+
+false si se termino el juego 
+\end{DoxyReturn}

@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tarea #1 Ahorcado: Referencia del Archivo /home/santiago/Documents/estructuras_datos/ie0217/Tareas/Tarea1/src/ahorcado.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tarea #1 Ahorcado
+   </div>
+   <div id="projectbrief">Este proyecto es un juego de Ahorcado, fue realizado como asignacion del curso</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo ahorcado.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Descripcion de las funciones necesarias para el juego de ahorcado.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="ahorcado_8hpp_source.html">ahorcado.hpp</a>&quot;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para ahorcado.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="ahorcado_8cpp__incl.png" border="0" usemap="#a_2home_2santiago_2Documents_2estructuras__datos_2ie0217_2Tareas_2Tarea1_2src_2ahorcado_8cpp" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a9cbe0d2a47dad23927f5d619a593f282"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ahorcado_8cpp.html#a9cbe0d2a47dad23927f5d619a593f282">dificultad</a> ()</td></tr>
+<tr class="memdesc:a9cbe0d2a47dad23927f5d619a593f282"><td class="mdescLeft">&#160;</td><td class="mdescRight">solucion a problema de variables definidas 2 veces en el sistema, declaracion por el extern  <a href="ahorcado_8cpp.html#a9cbe0d2a47dad23927f5d619a593f282">Más...</a><br /></td></tr>
+<tr class="separator:a9cbe0d2a47dad23927f5d619a593f282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af29fd86082a1367e21ceb21bf0e02e01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ahorcado_8cpp.html#af29fd86082a1367e21ceb21bf0e02e01">mostrar_estado</a> (<a class="el" href="structahorcado.html">ahorcado</a> *juego)</td></tr>
+<tr class="memdesc:af29fd86082a1367e21ceb21bf0e02e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">muestra el estado en que esta la palabra y cuantos intentos le quedan  <a href="ahorcado_8cpp.html#af29fd86082a1367e21ceb21bf0e02e01">Más...</a><br /></td></tr>
+<tr class="separator:af29fd86082a1367e21ceb21bf0e02e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afadb2c698baaf5568a8c375129198448"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ahorcado_8cpp.html#afadb2c698baaf5568a8c375129198448">encontrar_letra</a> (<a class="el" href="structahorcado.html">ahorcado</a> *juego)</td></tr>
+<tr class="memdesc:afadb2c698baaf5568a8c375129198448"><td class="mdescLeft">&#160;</td><td class="mdescRight">encuentra la letra dentro de la palabra y la intercambia dependiendo si acerto  <a href="ahorcado_8cpp.html#afadb2c698baaf5568a8c375129198448">Más...</a><br /></td></tr>
+<tr class="separator:afadb2c698baaf5568a8c375129198448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd6a81bc3371ea9b5e0982c2e85dae8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ahorcado_8cpp.html#affd6a81bc3371ea9b5e0982c2e85dae8">termino_juego</a> (<a class="el" href="structahorcado.html">ahorcado</a> *juego)</td></tr>
+<tr class="memdesc:affd6a81bc3371ea9b5e0982c2e85dae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">hace un checkeo si el juego ya termino, ademas de dar la opcion si se quedo sin intentos que se pueda ingresar la palabra como ultimo chance  <a href="ahorcado_8cpp.html#affd6a81bc3371ea9b5e0982c2e85dae8">Más...</a><br /></td></tr>
+<tr class="separator:affd6a81bc3371ea9b5e0982c2e85dae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8a1ac69a82acbd9fe7a295933e3a54"><td class="memItemLeft" align="right" valign="top"><a id="acc8a1ac69a82acbd9fe7a295933e3a54"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>agregar_palabra</b> (string <a class="el" href="ahorcado_8hpp.html#aeca41171ebe78effac0f34b886abdf94">listaPalabras</a>[], int &amp;palabras_agregadas)</td></tr>
+<tr class="separator:acc8a1ac69a82acbd9fe7a295933e3a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e3142aee4470f93560d3d44fd51e738"><td class="memItemLeft" align="right" valign="top"><a id="a0e3142aee4470f93560d3d44fd51e738"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ver_palabras</b> (const string <a class="el" href="ahorcado_8hpp.html#aeca41171ebe78effac0f34b886abdf94">listaPalabras</a>[], int palabras_agregadas)</td></tr>
+<tr class="separator:a0e3142aee4470f93560d3d44fd51e738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8244d9e3fae251dad9a498dcca409e8f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ahorcado_8cpp.html#a8244d9e3fae251dad9a498dcca409e8f">conseguir_numero_aleatorio</a> (int min, int max)</td></tr>
+<tr class="memdesc:a8244d9e3fae251dad9a498dcca409e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consigue un numero aleatorio para que la palabra que se escoge sea aleatoria.  <a href="ahorcado_8cpp.html#a8244d9e3fae251dad9a498dcca409e8f">Más...</a><br /></td></tr>
+<tr class="separator:a8244d9e3fae251dad9a498dcca409e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00ec65f3d804e9c5b0f12ffe2985ec83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ahorcado_8cpp.html#a00ec65f3d804e9c5b0f12ffe2985ec83">iniciar_juego</a> (int intentos, string <a class="el" href="ahorcado_8hpp.html#aeca41171ebe78effac0f34b886abdf94">listaPalabras</a>[], int palabras_agregadas)</td></tr>
+<tr class="separator:a00ec65f3d804e9c5b0f12ffe2985ec83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aeca41171ebe78effac0f34b886abdf94"><td class="memItemLeft" align="right" valign="top"><a id="aeca41171ebe78effac0f34b886abdf94"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ahorcado_8cpp.html#aeca41171ebe78effac0f34b886abdf94">listaPalabras</a> [100]</td></tr>
+<tr class="memdesc:aeca41171ebe78effac0f34b886abdf94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variables inicializadas de manera externa para el resto del programa.///. <br /></td></tr>
+<tr class="separator:aeca41171ebe78effac0f34b886abdf94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe634b054fac4c8e78a00540e6983aa5"><td class="memItemLeft" align="right" valign="top"><a id="afe634b054fac4c8e78a00540e6983aa5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>palabras_agregadas</b> = 0</td></tr>
+<tr class="separator:afe634b054fac4c8e78a00540e6983aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Descripcion de las funciones necesarias para el juego de ahorcado. </p>
+<dl class="section author"><dt>Autor</dt><dd>Santiago Herra <a href="#" onclick="location.href='mai'+'lto:'+'san'+'ti'+'ago'+'.h'+'err'+'a@'+'ucr'+'.a'+'c.c'+'r'; return false;">santi<span style="display: none;">.nosp@m.</span>ago.<span style="display: none;">.nosp@m.</span>herra<span style="display: none;">.nosp@m.</span>@ucr<span style="display: none;">.nosp@m.</span>.ac.c<span style="display: none;">.nosp@m.</span>r</a> </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>2024-03-31</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024 </dd></dl>
+</div><h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a8244d9e3fae251dad9a498dcca409e8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8244d9e3fae251dad9a498dcca409e8f">&#9670;&nbsp;</a></span>conseguir_numero_aleatorio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int conseguir_numero_aleatorio </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Consigue un numero aleatorio para que la palabra que se escoge sea aleatoria. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>valor minimo a elegir </td></tr>
+    <tr><td class="paramname">max</td><td>valor maximo a elegir </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>int valor aleatorio que se eligio. </dd></dl>
+<p>generador de numeros aleatorios</p>
+
+</div>
+</div>
+<a id="a9cbe0d2a47dad23927f5d619a593f282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cbe0d2a47dad23927f5d619a593f282">&#9670;&nbsp;</a></span>dificultad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dificultad </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>solucion a problema de variables definidas 2 veces en el sistema, declaracion por el extern </p>
+<p>seleccion de intentos que el jugador desea tener, simple switch case </p>
+
+</div>
+</div>
+<a id="afadb2c698baaf5568a8c375129198448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afadb2c698baaf5568a8c375129198448">&#9670;&nbsp;</a></span>encontrar_letra()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void encontrar_letra </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structahorcado.html">ahorcado</a> *&#160;</td>
+          <td class="paramname"><em>juego</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>encuentra la letra dentro de la palabra y la intercambia dependiendo si acerto </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">juego</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a00ec65f3d804e9c5b0f12ffe2985ec83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ec65f3d804e9c5b0f12ffe2985ec83">&#9670;&nbsp;</a></span>iniciar_juego()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void iniciar_juego </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>intentos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>listaPalabras</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>palabras_agregadas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>para continuar o terminar juego</p>
+<p>condiciones adicionales para que se inicie el juego condiciones de intentos</p>
+<p>condicion para agregar palabra si no se ha hecho</p>
+<p>selecciona palabra para jugar</p>
+<p>palabra a jugar ya conseguida en un array</p>
+<p>imprimiendo interfaz de juego:</p>
+<p>encontrar la letra adivinada</p>
+<p>condicion para que si se termina el juego no salte otra vez para pedir letra</p>
+
+</div>
+</div>
+<a id="af29fd86082a1367e21ceb21bf0e02e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af29fd86082a1367e21ceb21bf0e02e01">&#9670;&nbsp;</a></span>mostrar_estado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mostrar_estado </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structahorcado.html">ahorcado</a> *&#160;</td>
+          <td class="paramname"><em>juego</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>muestra el estado en que esta la palabra y cuantos intentos le quedan </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">juego</td><td>es el struct con la informacion del juego actual </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="affd6a81bc3371ea9b5e0982c2e85dae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affd6a81bc3371ea9b5e0982c2e85dae8">&#9670;&nbsp;</a></span>termino_juego()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool termino_juego </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structahorcado.html">ahorcado</a> *&#160;</td>
+          <td class="paramname"><em>juego</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>hace un checkeo si el juego ya termino, ademas de dar la opcion si se quedo sin intentos que se pueda ingresar la palabra como ultimo chance </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">juego</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true si el juego sigue </dd>
+<dd>
+false si se termino el juego </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

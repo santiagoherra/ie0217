@@ -1,9 +1,20 @@
+/**
+ * @file main.cpp
+ * @author Santiago Herra santiago.herra@ucr.ac.cr
+ * @brief Main del juego ahorcado, es un menu para las funciones que tiene el juego
+ * @version 0.1
+ * @date 2024-03-31
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include "ahorcado.hpp"
 #include "ahorcado_funciones.hpp"
 
 #include <iostream>
 
-enum Opciones{ // enum para las decisiones del menu
+enum Opciones{ /// enum para las decisiones del menu
     DIFICULTAD = 1,
     INICIAR,
     AGREGAR_PALABRAS,
@@ -12,7 +23,7 @@ enum Opciones{ // enum para las decisiones del menu
 };
 
 int main(){
-    //menu pricipal
+    ///menu pricipal
     int opcion;
     bool salir = false;
     int intentos;
@@ -26,7 +37,7 @@ int main(){
         std::cout << "5) Salir del programa\n";
         std::cin >> opcion;
 
-        switch (opcion) //bucle para poder hacer el menu
+        switch (opcion) ///bucle para poder hacer el menu
         {
         case DIFICULTAD:
             intentos = dificultad();

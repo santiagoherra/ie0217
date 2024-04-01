@@ -1,0 +1,188 @@
+\hypertarget{ahorcado__funciones_8hpp}{}\doxysection{Referencia del Archivo /home/santiago/\+Documents/estructuras\+\_\+datos/ie0217/\+Tareas/\+Tarea1/src/ahorcado\+\_\+funciones.hpp}
+\label{ahorcado__funciones_8hpp}\index{/home/santiago/Documents/estructuras\_datos/ie0217/Tareas/Tarea1/src/ahorcado\_funciones.hpp@{/home/santiago/Documents/estructuras\_datos/ie0217/Tareas/Tarea1/src/ahorcado\_funciones.hpp}}
+
+
+Header de las funciones utilizadas en el juego de ahorcado, representan las funciones internas y externas del juego.  
+
+
+{\ttfamily \#include \char`\"{}ahorcado.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Dependencia gráfica adjunta para ahorcado\+\_\+funciones.\+hpp\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ahorcado__funciones_8hpp_a9cbe0d2a47dad23927f5d619a593f282}{dificultad}} ()
+\begin{DoxyCompactList}\small\item\em seleccion de intentos que el jugador desea tener, simple switch case \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ahorcado__funciones_8hpp_a0ca0d77de8586de6311fe2bdb8616a15}{iniciar\+\_\+juego}} (int intentos, std\+::string \mbox{\hyperlink{ahorcado_8hpp_aeca41171ebe78effac0f34b886abdf94}{lista\+Palabras}}\mbox{[}$\,$\mbox{]}, int palabras\+\_\+agregadas)
+\begin{DoxyCompactList}\small\item\em funcion del juego ahorcado, tiene varias funciones internas para poder agregar la letra, y poder ir adivinando la palabra \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ahorcado__funciones_8hpp_af45e51bffb177cac3b8614b55626cc12}{agregar\+\_\+palabra}} (std\+::string \mbox{\hyperlink{ahorcado_8hpp_aeca41171ebe78effac0f34b886abdf94}{lista\+Palabras}}\mbox{[}$\,$\mbox{]}, int \&palabras\+\_\+agregadas)
+\begin{DoxyCompactList}\small\item\em Agrega palabras a lista\+Palabras para que el jugador pueda jugar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ahorcado__funciones_8hpp_ad76e00ded241357416d74eac94f18860}{ver\+\_\+palabras}} (const std\+::string \mbox{\hyperlink{ahorcado_8hpp_aeca41171ebe78effac0f34b886abdf94}{lista\+Palabras}}\mbox{[}$\,$\mbox{]}, int palabras\+\_\+agregadas)
+\begin{DoxyCompactList}\small\item\em Funcion para poder ver las palabras agregandas al juego. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ahorcado__funciones_8hpp_a8244d9e3fae251dad9a498dcca409e8f}{conseguir\+\_\+numero\+\_\+aleatorio}} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Consigue un numero aleatorio para que la palabra que se escoge sea aleatoria. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ahorcado__funciones_8hpp_af29fd86082a1367e21ceb21bf0e02e01}{mostrar\+\_\+estado}} (\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$juego)
+\begin{DoxyCompactList}\small\item\em muestra el estado en que esta la palabra y cuantos intentos le quedan \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ahorcado__funciones_8hpp_afadb2c698baaf5568a8c375129198448}{encontrar\+\_\+letra}} (\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$juego)
+\begin{DoxyCompactList}\small\item\em encuentra la letra dentro de la palabra y la intercambia dependiendo si acerto \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ahorcado__funciones_8hpp_affd6a81bc3371ea9b5e0982c2e85dae8}{termino\+\_\+juego}} (\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$juego)
+\begin{DoxyCompactList}\small\item\em hace un checkeo si el juego ya termino, ademas de dar la opcion si se quedo sin intentos que se pueda ingresar la palabra como ultimo chance \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Header de las funciones utilizadas en el juego de ahorcado, representan las funciones internas y externas del juego. 
+
+\begin{DoxyAuthor}{Autor}
+Santiago Herra \href{mailto:santiago.herra@ucr.ac.cr}{\texttt{ santiago.\+herra@ucr.\+ac.\+cr}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+2024-\/03-\/31
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{ahorcado__funciones_8hpp_af45e51bffb177cac3b8614b55626cc12}\label{ahorcado__funciones_8hpp_af45e51bffb177cac3b8614b55626cc12}} 
+\index{ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}!agregar\_palabra@{agregar\_palabra}}
+\index{agregar\_palabra@{agregar\_palabra}!ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}}
+\doxysubsubsection{\texorpdfstring{agregar\_palabra()}{agregar\_palabra()}}
+{\footnotesize\ttfamily void agregar\+\_\+palabra (\begin{DoxyParamCaption}\item[{std\+::string}]{lista\+Palabras\mbox{[}$\,$\mbox{]},  }\item[{int \&}]{palabras\+\_\+agregadas }\end{DoxyParamCaption})}
+
+
+
+Agrega palabras a lista\+Palabras para que el jugador pueda jugar. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em lista\+Palabras} & \\
+\hline
+{\em palabras\+\_\+agregadas} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ahorcado__funciones_8hpp_a8244d9e3fae251dad9a498dcca409e8f}\label{ahorcado__funciones_8hpp_a8244d9e3fae251dad9a498dcca409e8f}} 
+\index{ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}!conseguir\_numero\_aleatorio@{conseguir\_numero\_aleatorio}}
+\index{conseguir\_numero\_aleatorio@{conseguir\_numero\_aleatorio}!ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}}
+\doxysubsubsection{\texorpdfstring{conseguir\_numero\_aleatorio()}{conseguir\_numero\_aleatorio()}}
+{\footnotesize\ttfamily int conseguir\+\_\+numero\+\_\+aleatorio (\begin{DoxyParamCaption}\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Consigue un numero aleatorio para que la palabra que se escoge sea aleatoria. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em min} & valor minimo a elegir \\
+\hline
+{\em max} & valor maximo a elegir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+int valor aleatorio que se eligio. 
+\end{DoxyReturn}
+generador de numeros aleatorios\mbox{\Hypertarget{ahorcado__funciones_8hpp_a9cbe0d2a47dad23927f5d619a593f282}\label{ahorcado__funciones_8hpp_a9cbe0d2a47dad23927f5d619a593f282}} 
+\index{ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}!dificultad@{dificultad}}
+\index{dificultad@{dificultad}!ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}}
+\doxysubsubsection{\texorpdfstring{dificultad()}{dificultad()}}
+{\footnotesize\ttfamily int dificultad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+seleccion de intentos que el jugador desea tener, simple switch case 
+
+\begin{DoxyReturn}{Devuelve}
+int, devuelve la cantidad de intentos que el jugador desea tener
+\end{DoxyReturn}
+seleccion de intentos que el jugador desea tener, simple switch case \mbox{\Hypertarget{ahorcado__funciones_8hpp_afadb2c698baaf5568a8c375129198448}\label{ahorcado__funciones_8hpp_afadb2c698baaf5568a8c375129198448}} 
+\index{ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}!encontrar\_letra@{encontrar\_letra}}
+\index{encontrar\_letra@{encontrar\_letra}!ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}}
+\doxysubsubsection{\texorpdfstring{encontrar\_letra()}{encontrar\_letra()}}
+{\footnotesize\ttfamily void encontrar\+\_\+letra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$}]{juego }\end{DoxyParamCaption})}
+
+
+
+encuentra la letra dentro de la palabra y la intercambia dependiendo si acerto 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em juego} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ahorcado__funciones_8hpp_a0ca0d77de8586de6311fe2bdb8616a15}\label{ahorcado__funciones_8hpp_a0ca0d77de8586de6311fe2bdb8616a15}} 
+\index{ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}!iniciar\_juego@{iniciar\_juego}}
+\index{iniciar\_juego@{iniciar\_juego}!ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}}
+\doxysubsubsection{\texorpdfstring{iniciar\_juego()}{iniciar\_juego()}}
+{\footnotesize\ttfamily void iniciar\+\_\+juego (\begin{DoxyParamCaption}\item[{int}]{intentos,  }\item[{std\+::string}]{lista\+Palabras\mbox{[}$\,$\mbox{]},  }\item[{int}]{palabras\+\_\+agregadas }\end{DoxyParamCaption})}
+
+
+
+funcion del juego ahorcado, tiene varias funciones internas para poder agregar la letra, y poder ir adivinando la palabra 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em intentos} & la cantidad de intentos que tiene la persona para fallar la palabra \\
+\hline
+{\em lista\+Palabras} & el arreglo de palabras de donde se puede agarrar la palabra para jugar \\
+\hline
+{\em palabras\+\_\+agregadas} & contador de cantidad de palabras agregadas en lista\+Palabras\mbox{[}\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ahorcado__funciones_8hpp_af29fd86082a1367e21ceb21bf0e02e01}\label{ahorcado__funciones_8hpp_af29fd86082a1367e21ceb21bf0e02e01}} 
+\index{ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}!mostrar\_estado@{mostrar\_estado}}
+\index{mostrar\_estado@{mostrar\_estado}!ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}}
+\doxysubsubsection{\texorpdfstring{mostrar\_estado()}{mostrar\_estado()}}
+{\footnotesize\ttfamily void mostrar\+\_\+estado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$}]{juego }\end{DoxyParamCaption})}
+
+
+
+muestra el estado en que esta la palabra y cuantos intentos le quedan 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em juego} & es el struct con la informacion del juego actual \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ahorcado__funciones_8hpp_affd6a81bc3371ea9b5e0982c2e85dae8}\label{ahorcado__funciones_8hpp_affd6a81bc3371ea9b5e0982c2e85dae8}} 
+\index{ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}!termino\_juego@{termino\_juego}}
+\index{termino\_juego@{termino\_juego}!ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}}
+\doxysubsubsection{\texorpdfstring{termino\_juego()}{termino\_juego()}}
+{\footnotesize\ttfamily bool termino\+\_\+juego (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structahorcado}{ahorcado}} $\ast$}]{juego }\end{DoxyParamCaption})}
+
+
+
+hace un checkeo si el juego ya termino, ademas de dar la opcion si se quedo sin intentos que se pueda ingresar la palabra como ultimo chance 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em juego} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si el juego sigue 
+
+false si se termino el juego 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ahorcado__funciones_8hpp_ad76e00ded241357416d74eac94f18860}\label{ahorcado__funciones_8hpp_ad76e00ded241357416d74eac94f18860}} 
+\index{ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}!ver\_palabras@{ver\_palabras}}
+\index{ver\_palabras@{ver\_palabras}!ahorcado\_funciones.hpp@{ahorcado\_funciones.hpp}}
+\doxysubsubsection{\texorpdfstring{ver\_palabras()}{ver\_palabras()}}
+{\footnotesize\ttfamily void ver\+\_\+palabras (\begin{DoxyParamCaption}\item[{const std\+::string}]{lista\+Palabras\mbox{[}$\,$\mbox{]},  }\item[{int}]{palabras\+\_\+agregadas }\end{DoxyParamCaption})}
+
+
+
+Funcion para poder ver las palabras agregandas al juego. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em lista\+Palabras} & \\
+\hline
+{\em palabras\+\_\+agregadas} & \\
+\hline
+\end{DoxyParams}

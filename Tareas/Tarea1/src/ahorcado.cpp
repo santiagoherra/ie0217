@@ -1,3 +1,14 @@
+/**
+ * @file ahorcado.cpp
+ * @author Santiago Herra santiago.herra@ucr.ac.cr
+ * @brief Descripcion de las funciones necesarias para el juego de ahorcado
+ * @version 0.1
+ * @date 2024-03-31
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #include "ahorcado.hpp"
 
 #include <random>
@@ -5,7 +16,7 @@
 using namespace std;
 
 std::string listaPalabras[100];
-int palabras_agregadas = 0;//solucion a problema de variables definidas 2 veces en el sistema
+int palabras_agregadas = 0;///solucion a problema de variables definidas 2 veces en el sistema, declaracion por el extern
 
 int dificultad(){
     int decision;
@@ -112,7 +123,7 @@ void ver_palabras(const string listaPalabras[], int palabras_agregadas){
 }
 
 int conseguir_numero_aleatorio(int min, int max){
-    //generador de numeros aleatorios
+    ///generador de numeros aleatorios
     random_device rd; 
     mt19937 gen(rd());
     uniform_int_distribution<int> dist(min, max); 
@@ -121,7 +132,7 @@ int conseguir_numero_aleatorio(int min, int max){
 };
 
 void iniciar_juego(int intentos, string listaPalabras[], int palabras_agregadas){
-    //para continuar o terminar juego
+    ///para continuar o terminar juego
     bool continuar = true;
 
     //consiguiendo la palabra para poder jugar
@@ -129,38 +140,38 @@ void iniciar_juego(int intentos, string listaPalabras[], int palabras_agregadas)
 
     ahorcado juego;
 
-    //condiciones adicionales para que se inicie el juego
-    //condiciones de intentos
+    ///condiciones adicionales para que se inicie el juego
+    ///condiciones de intentos
     if(intentos == 0){
         intentos = dificultad();
     };
 
     juego.intentos_max = intentos;
 
-    //condicion para agregar palabra si no se ha hecho
+    ///condicion para agregar palabra si no se ha hecho
 
     if(listaPalabras[0].empty()){
         agregar_palabra(listaPalabras, palabras_agregadas);
     }
 
-    //selecciona palabra para jugar
+    ///selecciona palabra para jugar
 
     juego.palabra = listaPalabras[numero_aleatorio];
 
     juego.palabraAdivinada = string(juego.palabra.length(),'_');
 
-    //palabra a jugar ya conseguida en un array
+    ///palabra a jugar ya conseguida en un array
 
     do{
-        //imprimiendo interfaz de juego:
+        ///imprimiendo interfaz de juego:
         mostrar_estado(&juego);
 
         //verificar si termino juego
         continuar = termino_juego(&juego);
         
-        //encontrar la letra adivinada
+        ///encontrar la letra adivinada
         if(continuar){
-        //condicion para que si se termina el juego no salte otra vez para pedir letra
+        ///condicion para que si se termina el juego no salte otra vez para pedir letra
         encontrar_letra(&juego);
         }
     }
