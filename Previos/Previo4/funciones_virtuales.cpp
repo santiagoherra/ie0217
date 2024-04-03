@@ -18,9 +18,9 @@ class Derived : public Base {
 int main() {
     Derived derived1;
 
-    Base* base1 = &derived1;
+    Base* base1 = &derived1;//ejemplo con punteros
 
-    //utilizando la funcion redefinida.
+    //utilizando la funcion redefinida con punteros
     base1->print();
     return 0;
 }

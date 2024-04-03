@@ -31,7 +31,7 @@ int main(){
 
 
     cout << "El area es: " << pared.calcularArea() << endl;
-    cout << "El volumen es: " << pared.calcularVolumen() << endl;
+    cout << "El volumen es: " << pared.calcularVolumen() << endl;//utilizacion de los metodos en constructor
 
     return 0;
 }
