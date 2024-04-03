@@ -1,7 +1,7 @@
 #include <iostream> 
 #include "persona.hpp" 
 
-using namespace std; 
+using namespace std; //tomar en cuenta personas.cpp y personas.hpp
 
 int main() { 
     Persona p("Juan", 25);//usando los atributos como parametros.

@@ -21,6 +21,6 @@ int addFive(Distance d) {
 
 int main() {
     Distance D;
-    cout << "Distance: " << addFive(D);
+    cout << "Distance: " << addFive(D); //utilizando gracias a funciones amigas
     return 0;
 }

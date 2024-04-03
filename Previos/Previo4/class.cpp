@@ -3,13 +3,13 @@ using namespace std;
 
 class Molde {
 
-    public://tipo de acceso
+    public://tipo de acceso de los atributos
         double largo;
         double ancho;
         double altura;
 
 
-        Molde(){//constructor
+        Molde(){//constructor de cle tipo molde
             cout << "Esto se ejecuta en cada instanciacion" << endl;
             cout << "Iniciando un objeto de la clase Room" << endl;
         }
