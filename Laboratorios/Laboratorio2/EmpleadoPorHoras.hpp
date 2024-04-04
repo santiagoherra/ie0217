@@ -3,7 +3,7 @@
 
 #include "Empleado.hpp"
 
-class EmpleadoPorHoras : public Empleado{
+class EmpleadoPorHoras : public Empleado{//header base heredado de empleado de empleado por horas
     private:
         int horasTrabajadas;
     
