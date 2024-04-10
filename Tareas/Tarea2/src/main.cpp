@@ -13,7 +13,7 @@ int main(){
     ///menu pricipal
     int opcion;
     bool salir = false;
-    int intentos;
+    Planeta planeta1;
 
     do{
         std::cout << "\n Elige una opcion\n";
@@ -31,7 +31,7 @@ int main(){
             break;
         
         case COMPARAR_PAISES:
-            comparar_pais(listaPais);
+
             break;
         
         case AGREGAR_PAIS:
@@ -39,7 +39,7 @@ int main(){
             break;
 
         case ELIMINAR_PAIS:
-            eliminar_pais(listaPais)
+            eliminar_pais(listaPais);
             break;
 
         case SALIR:

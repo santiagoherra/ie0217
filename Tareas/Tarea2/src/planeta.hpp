@@ -5,13 +5,21 @@
 
 class Pais{///esta es la clase que donde se heredan los tipos de paises
     public:
-        std::string nombre_pais;
-        int PIB;
-        int cantidad_habitantes;
-        int calcular_PIB();
+        Pais(std::string Pais,
+             int PIB,
+             int cantidad_habitantes,
+             int identificador,
+             bool aeropuerto,
+             bool cinco_g,
+             bool centro_investigacion);
+             
+        double calcular_PIB();
         void imprimir_informacion();
 
     protected:
+        std::string nombre_pais;
+        int PIB;
+        int cantidad_habitantes;
         int identificador;
         bool aeropuerto;
         bool cinco_G;
@@ -19,6 +27,8 @@ class Pais{///esta es la clase que donde se heredan los tipos de paises
 
     private:
         int virtual calcular_personas_trabajo(int cantidad_habitantes);
+        bool esPrimo(int identificador);
+        Pais operator== (const Pais &p);
 };
 
 class Pais_desarrollo : public Pais{///Esta es la clase de Pais desarrollo que hereda de Pais
@@ -34,8 +44,13 @@ class Pais_primer_mundo : public Pais{///Esta es la clase de Pais primer mundo q
 class Continente{///Esta es la clase continente que contiene los paises
     public:
         std::string nombre_continente;
-        int cantidad_paises;//arreglar
-        Pais listaPais[];//ARREGLAR!!!!!!!!
+
+        int cantidad_paises_primermundo;
+        Pais listaPais_primermundo[50];//arreglar
+
+        int cantidad_paises_desarrollo;
+        Pais listaPais_desarrollo[50];//arreglar
+        
         void imprimir_informacion(int cantidad_paises, Pais listaPais[]);
         void imprimir_paises(int cantidad_paises, Pais listaPaises[]);
 };
@@ -63,13 +78,5 @@ void agregar_pais(Pais listaPais[]);
 /// @brief Elimina paises ya creados
 /// @param listaPais lista para agregar el pais
 void eliminar_pais(Pais listaPais[]);
-/**
- * @brief Compara paises para ver si son del mismo tipo 
- * 
- * @param listaPais 
- * @return true si son iguales
- * @return false si no son iguales
- */
-bool comparar_pais(Pais listaPais[]);
 
 #endif
