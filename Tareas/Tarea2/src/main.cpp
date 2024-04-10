@@ -1,6 +1,7 @@
 #include <iostream>
 #include "planeta_funciones.cpp"
 
+
 enum Opciones{ /// enum para las decisiones del menu
     IMPRIMIR_INFORMACION = 1,
     COMPARAR_PAISES,

@@ -19,30 +19,30 @@ class Pais{///esta es la clase que donde se heredan los tipos de paises
     protected:
         std::string nombre_pais;
         int PIB;
-        int cantidad_habitantes;
+        double cantidad_habitantes;
         int identificador;
         bool aeropuerto;
         bool cinco_G;
         bool centro_investigacion;
 
     private:
-        int virtual calcular_personas_trabajo(int cantidad_habitantes);
+        double virtual calcular_personas_trabajo(double cantidad_habitantes);
         bool esPrimo(int identificador);
-        Pais operator== (const Pais &p);
+        bool operator== (const Pais &p);
 };
 
 class Pais_desarrollo : public Pais{///Esta es la clase de Pais desarrollo que hereda de Pais
     //redefinir las propiedades protegidas
-    int calcular_personas_trabajo(int cantidad_habitantes) override;
+    double calcular_personas_trabajo(double cantidad_habitantes) override;
 };
 
 class Pais_primer_mundo : public Pais{///Esta es la clase de Pais primer mundo que hereda de Pais
     //redefinir las propiedadas redefinidas
-    int calcular_personas_trabajo(int cantidad_habitantes) override;
+    double calcular_personas_trabajo(double cantidad_habitantes) override;
 };
 
 class Continente{///Esta es la clase continente que contiene los paises
-    public:
+    protected:
         std::string nombre_continente;
 
         int cantidad_paises_primermundo;
@@ -51,8 +51,14 @@ class Continente{///Esta es la clase continente que contiene los paises
         int cantidad_paises_desarrollo;
         Pais listaPais_desarrollo[50];//arreglar
         
-        void imprimir_informacion(int cantidad_paises, Pais listaPais[]);
-        void imprimir_paises(int cantidad_paises, Pais listaPaises[]);
+    public:
+
+        Continente(std::string nombre_continente,
+                  int cantidad_paises_primermundo,
+                  Pais listaPais_primermundo[50],
+                  int cantidad_paises_desarrollo,
+                  Pais listaPais_desarrollo[50]);
+        void imprimir_informacion();
 };
 
 class Planeta{///Esta es la clase planeta que contiene los contienentes y paises
