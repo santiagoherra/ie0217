@@ -61,7 +61,7 @@ class Continente{///Esta es la clase continente que contiene los paises
                   Pais listaPais_primermundo[50],
                   int cantidad_paises_desarrollo,
                   Pais listaPais_desarrollo[50]);
-        void imprimir_informacion(const Continente listaContinente[5]);
+        void imprimir_informacion();
 };
 
 class Planeta{///Esta es la clase planeta que contiene los contienentes y paises
@@ -79,9 +79,9 @@ class Planeta{///Esta es la clase planeta que contiene los contienentes y paises
 void imprimir_planeta(Planeta planeta1);
 /// @brief Agrega paises con toda la informacion necesaria de cada pais y contieen
 /// @param listaPais Se pasa por parametro el pais que se quier agregar
-void agregar_pais(Pais listaPais[]);
+void agregar_pais(Planeta planeta1);
 /// @brief Elimina paises ya creados
 /// @param listaPais lista para agregar el pais
-void eliminar_pais(Pais listaPais[]);
+void eliminar_pais(Planeta& planeta1);
 
 #endif

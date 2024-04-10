@@ -1,6 +1,6 @@
 #include <iostream>
 #include "planeta_funciones.cpp"
-
+#include "planeta.hpp"
 
 enum Opciones{ /// enum para las decisiones del menu
     IMPRIMIR_INFORMACION = 1,
@@ -36,11 +36,11 @@ int main(){
             break;
         
         case AGREGAR_PAIS:
-            agregar_pais(listaPais);
+            agregar_pais(planeta1);
             break;
 
         case ELIMINAR_PAIS:
-            eliminar_pais(listaPais);
+            eliminar_pais(planeta1);
             break;
 
         case SALIR:
