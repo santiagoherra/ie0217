@@ -7,14 +7,14 @@ Pais::Pais(std::string nombre_pais,
            int cantidad_habitantes,
            int identificador,
            bool aeropuerto,
-           bool cinco_g,
+           bool cinco_G,
            bool centro_investigacion) :
            nombre_pais(nombre_pais),
            PIB(PIB),
            cantidad_habitantes(cantidad_habitantes),
            identificador(identificador),
            aeropuerto(aeropuerto),
-           cinco_G(cinco_g),
+           cinco_G(cinco_G),
            centro_investigacion(centro_investigacion) {}
 
 double Pais::calcular_PIB(){
@@ -27,30 +27,42 @@ double Pais::calcular_PIB(){
     return dis(gen);
 }
 
-bool Pais::esPrimo(int numero) {
-    if (numero <= 1) {
+bool Pais::esPrimo(int identificador) {
+    if (identificador <= 1) {
         return false;
     }
-    if (numero <= 3) {
+    if (identificador <= 3) {
         return true;
     }
-    if (numero % 2 == 0 || numero % 3 == 0) {
+    if (identificador % 2 == 0 || identificador % 3 == 0) {
         return false;
     }
-    int limite = sqrt(numero) + 1;
+    int limite = sqrt(identificador) + 1;
     for (int i = 5; i < limite; i += 6) {
-        if (numero % i == 0 || numero % (i + 2) == 0) {
+        if (identificador % i == 0 || identificador % (i + 2) == 0) {
             return false;
         }
     }
     return true;
 }
 
-Pais Pais::operator== (const Pais &p){
-    Pais booleano(
-        
-    );
+bool Pais::operator== (const Pais &p){
+    return cinco_G == p.cinco_G;
 }
+
+double Pais_desarrollo::calcular_personas_trabajo(double cantidad_habitantes){
+    double min = 0;
+    std::random_device rd;
+    std::mt19937 gen(rd()); 
+    std::uniform_real_distribution<double> dis(min, cantidad_habitantes); 
+
+    return dis(gen);
+}
+
+double Pais_primer_mundo::calcular_personas_trabajo(double cantidad_habitantes){
+    return cantidad_habitantes;
+}
+
 
 
 void Pais::imprimir_informacion(){
@@ -65,5 +77,46 @@ void Pais::imprimir_informacion(){
         std::cout << nombre_pais << " contiene aeropuertos, tecnologia 5G y centros de investigacion" << std::endl;
     }
 }
+
+Continente::Continente(std::string nombre_continente,
+                       int cantidad_paises_primermundo,
+                       Pais listaPais_primermundo[],
+                       int cantidad_paises_desarrollo,
+                       Pais listaPais_desarrollo[]) :
+                       nombre_continente(nombre_continente),
+                       cantidad_paises_primermundo(cantidad_paises_primermundo),
+                       cantidad_paises_desarrollo(cantidad_paises_desarrollo) {
+    for (int i = 0; i < cantidad_paises_primermundo; ++i) {
+        this->listaPais_primermundo[i] = listaPais_primermundo[i];
+    }
+    for (int i = 0; i < cantidad_paises_desarrollo; ++i) {
+        this->listaPais_desarrollo[i] = listaPais_desarrollo[i];
+    }
+}
+
+
+void Continente::imprimir_informacion(const Continente listaContinente[5]){
+    for(int i = 0; i < 5; ++i){
+        std::cout << listaContinente[i].nombre_continente << "posee "
+        << listaContinente[i].cantidad_paises_desarrollo + listaContinente[i].cantidad_paises_primermundo
+        << " paises, " << listaContinente[i].cantidad_paises_primermundo << " son de primer mundo y "
+        << listaContinente[i].cantidad_paises_desarrollo << "son en desarrollo." << std::endl;
+    }
+}
+
+Planeta::Planeta(std::string nombre_planeta, Continente listaContinente[5]) :
+    nombre_planeta(nombre_planeta) {
+    
+}
+
+void Planeta::imprimir_informacion() {
+    std::cout << "Planeta posee 5 continentes: America, Europa, Africa, Oceanıa y Asia."
+    << std::endl;
+}
+
+void imprimir_planeta(Planeta planeta1){
+    
+}
+
 
 

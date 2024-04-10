@@ -5,7 +5,9 @@
 
 class Pais{///esta es la clase que donde se heredan los tipos de paises
     public:
-        Pais(std::string Pais,
+        Pais() {}//agregando constructor predeterminado para poder usarlo en continente
+
+        Pais(std::string nombre_pais,
              int PIB,
              int cantidad_habitantes,
              int identificador,
@@ -52,27 +54,24 @@ class Continente{///Esta es la clase continente que contiene los paises
         Pais listaPais_desarrollo[50];//arreglar
         
     public:
+        Continente() {}//agregand constructor basico
 
         Continente(std::string nombre_continente,
                   int cantidad_paises_primermundo,
                   Pais listaPais_primermundo[50],
                   int cantidad_paises_desarrollo,
                   Pais listaPais_desarrollo[50]);
-        void imprimir_informacion();
+        void imprimir_informacion(const Continente listaContinente[5]);
 };
 
 class Planeta{///Esta es la clase planeta que contiene los contienentes y paises
-    public:
-        Continente America, Europa, Africa, Asia, Oceania;
+    protected:
         std:: string nombre_planeta;
-        Continente listaContinente[5] = {America,
-                                         Europa,
-                                         Africa,
-                                         Asia,
-                                         Oceania
-                                         };
-
-        void imprimir_informacion(Continente listaContinente[5]);
+        Continente listaContinente[5];
+        
+    public:
+        Planeta(std::string nombre_planeta, Continente listaContinente[5]);
+        void imprimir_informacion();
 
 };
 /// @brief Funcion que imprime toda la informacion de planeta
