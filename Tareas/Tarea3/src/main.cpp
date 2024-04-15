@@ -28,22 +28,12 @@ int main(){
         switch (opcion) ///Bucle do-while para realizar el menu
         {
         case AGREGAR:
-            int opcion_agregar;
-            std::cout << "\nEscoge adonde quieres agregar el contacto:\n" <<
-                    "1) Agregar contacto en el cloud\n "<<
-                    "2) Agregar contacto en el telefono\n" << std::endl;
-    
-            std::cin >> opcion_agregar;
-            if(opcion_agregar == 1){
-                agregar_contacto_hashtable(&tabla_hash);
-            } 
-            else if(opcion_agregar == 2){
-                agregar_contacto_telefono(cabeza);
-            }
+            agregar_contacto(&tabla_hash, cabeza);
             break;
         
         case ELIMINAR:
-
+            eliminar_contacto(&tabla_hash, cabeza);
+            
             break;
         
         case MOSTRAR_CLOUD:
