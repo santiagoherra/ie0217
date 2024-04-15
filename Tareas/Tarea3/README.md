@@ -10,7 +10,7 @@ g++ -o ejecutable.exe main.cpp .cpp
 ```
 Esto le compilara el archivos para crearle el ejecutable **ejecutable.exe**. Para ejecutar el programa ingrese el comando.
 ```
-./.exe
+./ejecutable.exe
 ```
 
 ### Parte teorica.
