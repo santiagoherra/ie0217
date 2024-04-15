@@ -1,4 +1,4 @@
-#include "iostream"
+#include <iostream>
 #include "funciones_contacto.hpp"
 
 enum Opciones{ /// enum para las decisiones del menu
@@ -13,7 +13,7 @@ int main(){
     ///menu pricipal
     int opcion;
     bool salir = false;
-    Contacto cabeza;
+    Contacto* cabeza = nullptr;
     std::unordered_map<std::string, Contacto > tabla_hash;
 
     do{
@@ -25,14 +25,25 @@ int main(){
         std::cout << "5) Salir del programa\n";
         std::cin >> opcion;
 
-        switch (opcion) ///bucle para poder hacer el menu
+        switch (opcion) ///Bucle do-while para realizar el menu
         {
         case AGREGAR:
-            agregar();
+            int opcion_agregar;
+            std::cout << "\nEscoge adonde quieres agregar el contacto:\n" <<
+                    "1) Agregar contacto en el cloud\n "<<
+                    "2) Agregar contacto en el telefono\n" << std::endl;
+    
+            std::cin >> opcion_agregar;
+            if(opcion_agregar == 1){
+                agregar_contacto_hashtable(&tabla_hash);
+            } 
+            else if(opcion_agregar == 2){
+                agregar_contacto_telefono(cabeza);
+            }
             break;
         
         case ELIMINAR:
-            eliminar();
+
             break;
         
         case MOSTRAR_CLOUD:
