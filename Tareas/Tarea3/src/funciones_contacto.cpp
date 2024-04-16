@@ -138,6 +138,8 @@ void mostrar_contactos_hashtable(std::unordered_map<std::string, Contacto>* tabl
 
 
 void mostrar_contactos_telefono(Contacto* nuevo_contacto_ptr, int* ptr_cantidad){
+    //lista ordenada para imprimir
+    Contacto lista_ordenada[*ptr_cantidad];
 
     if(*ptr_cantidad == 0){
         cout << "La memoria de contactos esta vacia" << endl;
@@ -148,6 +150,8 @@ void mostrar_contactos_telefono(Contacto* nuevo_contacto_ptr, int* ptr_cantidad)
     cout << "Nombre : Telefono" << endl;
 
     for(int i = 0; i < *ptr_cantidad; i++){
+        
+        //para imprimir los valores
         cout << nuevo_contacto_ptr[i].nombre << " : " << nuevo_contacto_ptr[i].telefono << endl;
     }
 
