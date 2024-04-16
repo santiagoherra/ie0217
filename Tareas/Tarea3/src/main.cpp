@@ -13,8 +13,8 @@ int main(){
     ///menu pricipal
     int opcion;
     bool salir = false;
-    Contacto* cabeza = nullptr;
-    std::unordered_map<std::string, Contacto > tabla_hash;
+    //definiendo que la cantidad de contactos inicial es 0
+    cantidad_contactos = 0;
 
     do{
         std::cout << "\n Elige una opcion\n";
@@ -28,11 +28,11 @@ int main(){
         switch (opcion) ///Bucle do-while para realizar el menu
         {
         case AGREGAR:
-            agregar_contacto(&tabla_hash, cabeza);
+            agregar_contacto(&tabla_hash, cabeza, nuevo_contacto_ptr, ptr_cantidad);
             break;
         
         case ELIMINAR:
-            eliminar_contacto(&tabla_hash, cabeza);
+            eliminar_contacto(&tabla_hash, cabeza, nuevo_contacto_ptr, ptr_cantidad);
             
             break;
         
@@ -41,8 +41,7 @@ int main(){
             break;
 
         case MOSTRAR_TELEFONO:
-            mostrar_contactos_telefono(cabeza);
-            break;
+            mostrar_contactos_telefono(cabeza, nuevo_contacto_ptr);
 
         case SALIR:
             salir = true;
