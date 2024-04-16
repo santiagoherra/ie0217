@@ -87,12 +87,21 @@ void eliminar_contacto(std::unordered_map<std::string, Contacto >* tabla_hash, C
 }
 
 
-void mostrar_contactos_telefono(Contacto*& cabeza){
+void mostrar_contactos_telefono(Contacto* nuevo_contacto_ptr, int* ptr_cantidad){
+    Contacto lista_ordenada[*ptr_cantidad];
+    int contador = 0;
 
-    
+    //lista sin ordenar
+    for(int i = 0; i < *ptr_cantidad; i++){
+        cout << nuevo_contacto_ptr[i].nombre << ":" << nuevo_contacto_ptr[i].telefono << endl;
+    }
 
 }
 
-void mostrar_contactos_hashtable(const std::unordered_map<std::string, Contacto > tabla_hash){
-
+void mostrar_contactos_hashtable(const std::unordered_map<std::string, Contacto>* tabla_hash) {
+    cout << "LLave     Nombre      Telefono" << endl; 
+    for (auto& par : *tabla_hash) { // Desreferencia el puntero para acceder al mapa
+        cout << par.first << "\t" << par.second.nombre << "\t" << par.second.telefono << endl;
+    }   
 }
+

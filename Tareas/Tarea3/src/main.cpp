@@ -37,11 +37,11 @@ int main(){
             break;
         
         case MOSTRAR_CLOUD:
-            mostrar_contactos_hashtable(tabla_hash);
+            mostrar_contactos_hashtable(&tabla_hash);
             break;
 
         case MOSTRAR_TELEFONO:
-            mostrar_contactos_telefono(cabeza, nuevo_contacto_ptr);
+            mostrar_contactos_telefono(nuevo_contacto_ptr, ptr_cantidad);
 
         case SALIR:
             salir = true;

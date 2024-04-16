@@ -19,6 +19,7 @@ Contacto* cabeza = nullptr;
 Contacto* nuevo_contacto_ptr = (Contacto*)malloc(100 * sizeof(Contacto));
 
 int cantidad_contactos;
+
 int* ptr_cantidad = &cantidad_contactos;
 
 
