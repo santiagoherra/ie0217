@@ -1,4 +1,5 @@
 #include "funciones_contacto.hpp"
+#include <iostream>
 using namespace std;
 
 
@@ -11,6 +12,7 @@ void agregar_contacto(unordered_map<string, Contacto>* tabla_hash, Contacto*& ca
     string nuevo_telefono;
 
     cout << "Nombre del contacto: ";
+    cin.ignore();
     getline(cin, nuevo_nombre); // Leer el nombre del contacto
 
     cout << "Numero de telefono: ";
@@ -46,6 +48,7 @@ void eliminar_contacto(std::unordered_map<std::string, Contacto >* tabla_hash, C
     bool existe; //para saber si el contacto si existe.
 
     cout << "Nombre del contacto a borrar: ";
+    cin.ignore();
     getline(cin, nombre_borrar); 
 
     cout << "Numero de telefono del contacto a borrar: ";
@@ -87,6 +90,14 @@ void eliminar_contacto(std::unordered_map<std::string, Contacto >* tabla_hash, C
 }
 
 
+void mostrar_contactos_hashtable(std::unordered_map<std::string, Contacto>* tabla_hash) {
+    cout << "LLave     Nombre      Telefono" << endl; 
+    for (auto& par : *tabla_hash) { // Desreferencia el puntero para acceder al mapa
+        cout << par.first << "\t" << par.second.nombre << "\t" << par.second.telefono << endl;
+    }   
+}
+
+
 void mostrar_contactos_telefono(Contacto* nuevo_contacto_ptr, int* ptr_cantidad){
     Contacto lista_ordenada[*ptr_cantidad];
     int contador = 0;
@@ -97,11 +108,3 @@ void mostrar_contactos_telefono(Contacto* nuevo_contacto_ptr, int* ptr_cantidad)
     }
 
 }
-
-void mostrar_contactos_hashtable(const std::unordered_map<std::string, Contacto>* tabla_hash) {
-    cout << "LLave     Nombre      Telefono" << endl; 
-    for (auto& par : *tabla_hash) { // Desreferencia el puntero para acceder al mapa
-        cout << par.first << "\t" << par.second.nombre << "\t" << par.second.telefono << endl;
-    }   
-}
-

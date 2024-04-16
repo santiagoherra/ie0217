@@ -12,15 +12,6 @@ struct Contacto {
 };
     
 //Definicion de tabla hash
-std::unordered_map<std::string, Contacto > tabla_hash;
-
-Contacto* cabeza = nullptr;
-
-Contacto* nuevo_contacto_ptr = (Contacto*)malloc(100 * sizeof(Contacto));
-
-int cantidad_contactos;
-
-int* ptr_cantidad = &cantidad_contactos;
 
 
 #endif

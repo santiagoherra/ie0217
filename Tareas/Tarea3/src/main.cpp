@@ -14,7 +14,16 @@ int main(){
     int opcion;
     bool salir = false;
     //definiendo que la cantidad de contactos inicial es 0
-    cantidad_contactos = 0;
+    std::unordered_map<std::string, Contacto > tabla_hash;
+
+    Contacto* cabeza = nullptr;
+
+    Contacto* nuevo_contacto_ptr = (Contacto*)malloc(100 * sizeof(Contacto));
+
+    int cantidad_contactos = 0 ;
+
+    int* ptr_cantidad = &cantidad_contactos;
+
 
     do{
         std::cout << "\n Elige una opcion\n";
@@ -22,7 +31,7 @@ int main(){
         std::cout << "2) Eliminar contacto\n";
         std::cout << "3) Mostrar contacto en el cloud\n";
         std::cout << "4) Mostrar contactos en el telefono\n";
-        std::cout << "5) Salir del programa\n";
+        std::cout << "5) Salir del programa\n\n";
         std::cin >> opcion;
 
         switch (opcion) ///Bucle do-while para realizar el menu
@@ -44,6 +53,7 @@ int main(){
             mostrar_contactos_telefono(nuevo_contacto_ptr, ptr_cantidad);
 
         case SALIR:
+            std::cout << "Saliendo del programa\n" << std::endl;
             salir = true;
             break;
             
