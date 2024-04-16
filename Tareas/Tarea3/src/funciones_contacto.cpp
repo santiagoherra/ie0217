@@ -1,5 +1,6 @@
 #include "funciones_contacto.hpp"
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 
@@ -24,6 +25,7 @@ void agregar_contacto(unordered_map<string, Contacto>* tabla_hash, Contacto*& ca
     nuevo_contacto.telefono = nuevo_telefono;
 
     //Agregar en el bloque que hizo el malloc:
+
     nuevo_contacto_ptr[*ptr_cantidad] = nuevo_contacto;
 
     *ptr_cantidad+=1;
@@ -41,41 +43,66 @@ void agregar_contacto(unordered_map<string, Contacto>* tabla_hash, Contacto*& ca
 
 }
 
-
-void eliminar_contacto(std::unordered_map<std::string, Contacto >* tabla_hash, Contacto*& cabeza, Contacto* nuevo_contacto_ptr, int* ptr_cantidad){
+void eliminar_contacto(std::unordered_map<std::string, Contacto>* tabla_hash, Contacto*& cabeza, Contacto*& nuevo_contacto_ptr, int* ptr_cantidad) {
     string nombre_borrar;
-    string telefono_borrar;
-    bool existe; //para saber si el contacto si existe.
+    bool agrega_solo_uno;
 
     cout << "Nombre del contacto a borrar: ";
     cin.ignore();
     getline(cin, nombre_borrar); 
 
-    for(int i = 0; i < *ptr_cantidad; i++){
-        if(nuevo_contacto_ptr[i].nombre == nombre_borrar){
-
-            //print
+    bool encontrado = false;
+    for (int i = 0; i < *ptr_cantidad; i++) {
+        if (nuevo_contacto_ptr[i].nombre == nombre_borrar) {
+            // Se encontro el contacto, eliminarlo
             cout << "Se ha eliminado el contacto \nNombre: " << nuevo_contacto_ptr[i].nombre <<
             "\nTelefono: " << nuevo_contacto_ptr[i].telefono << endl;
 
-            //se libera la memoria    
-            free(&nuevo_contacto_ptr[i]);
-            //se resta la cantidad de contactos 
-            *ptr_cantidad-=1;
-            //condicion
-            existe = true;
+            //arreglo para error si solo se agrega un contacto.
+            if(*ptr_cantidad == 1){
+                *ptr_cantidad += 1;
+                agrega_solo_uno = true;
+            }
 
-        }
-        else{
-            cout << "No se pudo encontrar el contacto deseado" << endl;
-            existe = false;
+
+            // Mover el ultimo elemento al lugar del que se quiere eliminar
+            nuevo_contacto_ptr[i] = nuevo_contacto_ptr[*ptr_cantidad - 1];
+
+            // Redimensionar el array para eliminar el último elemento
+            Contacto* temp = (Contacto*)realloc(nuevo_contacto_ptr, (*ptr_cantidad - 1) * sizeof(Contacto));
+            if (temp != nullptr) {
+                nuevo_contacto_ptr = temp;
+                // Decrementar el valor de ptr_cantidad después de la eliminación
+                *ptr_cantidad -= 1;
+            } else {
+                // Error al redimensionar, manejar el error según sea necesario
+                cout << "Error al redimensionar el array." << endl;
+                return;
+            }
+
+            //Para solucionar error cuando hay un solo contacto.
+            if(agrega_solo_uno){
+                *ptr_cantidad -= 1;
+            }
+
+
+            encontrado = true;
+            break;
         }
     }
 
+    if (encontrado) {
+        cout << "Contacto eliminado exitosamente." << endl;
+    } else {
+        cout << "No se pudo encontrar el contacto deseado" << endl;
+    }
+
+
+    //eliminacion del contacto en el hashtable
 
     int opcion;
 
-    if(existe == true){
+    if(encontrado == true){
 
         cout << "\nDeseas borrar el contacto el contacto del cloud?\n1)Si \n2) No\n" << endl;
         cin >> opcion;
