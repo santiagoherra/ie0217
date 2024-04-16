@@ -51,6 +51,7 @@ int main(){
 
         case MOSTRAR_TELEFONO:
             mostrar_contactos_telefono(nuevo_contacto_ptr, ptr_cantidad);
+            break;
 
         case SALIR:
             std::cout << "Saliendo del programa\n" << std::endl;
@@ -58,7 +59,7 @@ int main(){
             break;
             
         default:
-            continue;
+            std::cout << "\n Que deseas hacer? \n" << std::endl;
             break;
         }
 
