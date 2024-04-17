@@ -1,7 +1,17 @@
+/**
+ * @file main.cpp
+ * @author Santiago Herra santiago.herra@ucr.ac.cr
+ * @brief Es un menu para poder escogiendo  las funciones
+ * @version 0.1
+ * @date 2024-04-17
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 #include <iostream>
 #include "funciones_contacto.hpp"
 
-enum Opciones{ /// enum para las decisiones del menu
+enum Opciones{ /// Enum para las decisiones del menu
     AGREGAR = 1,
     ELIMINAR,
     MOSTRAR_CLOUD,
@@ -10,18 +20,19 @@ enum Opciones{ /// enum para las decisiones del menu
 };
 
 int main(){
-    ///menu pricipal
+    ///Menu pricipal
     int opcion;
     bool salir = false;
-    //definiendo que la cantidad de contactos inicial es 0
+
+    ///Definiendo la tabla hash
     std::unordered_map<std::string, Contacto > tabla_hash;
-
+    ///Defiendo el puntero de la lista enlazada
     Contacto* cabeza = nullptr;
-
+    ///Inicializacion de la memoria dinamica
     Contacto* nuevo_contacto_ptr = (Contacto*)malloc(100 * sizeof(Contacto));
-
+    ///Inicializacion de los contactos en 0
     int cantidad_contactos = 0 ;
-
+    ///Puntero de la cantidad de datos
     int* ptr_cantidad = &cantidad_contactos;
 
 
