@@ -1,0 +1,148 @@
+\hypertarget{funciones__contacto_8cpp}{}\doxysection{Referencia del Archivo /home/santiago/\+Documents/estructuras\+\_\+datos/ie0217/\+Tareas/\+Tarea3/src/funciones\+\_\+contacto.cpp}
+\label{funciones__contacto_8cpp}\index{/home/santiago/Documents/estructuras\_datos/ie0217/Tareas/Tarea3/src/funciones\_contacto.cpp@{/home/santiago/Documents/estructuras\_datos/ie0217/Tareas/Tarea3/src/funciones\_contacto.cpp}}
+
+
+La definicion de las funciones utilizadas en el main.  
+
+
+{\ttfamily \#include \char`\"{}funciones\+\_\+contacto.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+Dependencia gráfica adjunta para funciones\+\_\+contacto.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{funciones__contacto_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{funciones__contacto_8cpp_a3172a31ec1d3208bfd1ebc912f2944d4}{agregar\+\_\+contacto}} (unordered\+\_\+map$<$ string, \mbox{\hyperlink{structContacto}{Contacto}} $>$ $\ast$tabla\+\_\+hash, \mbox{\hyperlink{structContacto}{Contacto}} $\ast$\&cabeza, \mbox{\hyperlink{structContacto}{Contacto}} $\ast$nuevo\+\_\+contacto\+\_\+ptr, int $\ast$ptr\+\_\+cantidad)
+\item 
+void \mbox{\hyperlink{funciones__contacto_8cpp_ac443c8a2ba76213bf738b9bee7b9a5fe}{eliminar\+\_\+contacto}} (std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{structContacto}{Contacto}} $>$ $\ast$tabla\+\_\+hash, \mbox{\hyperlink{structContacto}{Contacto}} $\ast$\&cabeza, \mbox{\hyperlink{structContacto}{Contacto}} $\ast$\&nuevo\+\_\+contacto\+\_\+ptr, int $\ast$ptr\+\_\+cantidad)
+\begin{DoxyCompactList}\small\item\em Elimina contactos de la memoria dinamica con la opcion de borrar los contactos de la memoria cloud. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones__contacto_8cpp_a33c1ebd48cf81fee006d08a1e18d07bb}{mostrar\+\_\+contactos\+\_\+hashtable}} (std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{structContacto}{Contacto}} $>$ $\ast$tabla\+\_\+hash)
+\begin{DoxyCompactList}\small\item\em Muestra los contactos dentro de la hashtable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones__contacto_8cpp_acbd7eb2cc5da16a08b6470b09ab54e2d}{mostrar\+\_\+contactos\+\_\+telefono}} (\mbox{\hyperlink{structContacto}{Contacto}} $\ast$nuevo\+\_\+contacto\+\_\+ptr, int $\ast$ptr\+\_\+cantidad)
+\begin{DoxyCompactList}\small\item\em Muestra los contactos organizados alfabeticamente dentro de la memoria dinamica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+La definicion de las funciones utilizadas en el main. 
+
+\begin{DoxyAuthor}{Autor}
+Santiago Herra \href{mailto:santiago.herra@ucr.ac.cr}{\texttt{ santiago.\+herra@ucr.\+ac.\+cr}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+2024-\/04-\/17
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{funciones__contacto_8cpp_a3172a31ec1d3208bfd1ebc912f2944d4}\label{funciones__contacto_8cpp_a3172a31ec1d3208bfd1ebc912f2944d4}} 
+\index{funciones\_contacto.cpp@{funciones\_contacto.cpp}!agregar\_contacto@{agregar\_contacto}}
+\index{agregar\_contacto@{agregar\_contacto}!funciones\_contacto.cpp@{funciones\_contacto.cpp}}
+\doxysubsubsection{\texorpdfstring{agregar\_contacto()}{agregar\_contacto()}}
+{\footnotesize\ttfamily void agregar\+\_\+contacto (\begin{DoxyParamCaption}\item[{unordered\+\_\+map$<$ string, \mbox{\hyperlink{structContacto}{Contacto}} $>$ $\ast$}]{tabla\+\_\+hash,  }\item[{\mbox{\hyperlink{structContacto}{Contacto}} $\ast$\&}]{cabeza,  }\item[{\mbox{\hyperlink{structContacto}{Contacto}} $\ast$}]{nuevo\+\_\+contacto\+\_\+ptr,  }\item[{int $\ast$}]{ptr\+\_\+cantidad }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{structContacto}{Contacto}} que va en la tabla hash y dentro del malloc
+
+\mbox{\hyperlink{structContacto}{Contacto}} que va en el telefono
+
+Leer el nombre del contacto
+
+Leer el número de teléfono
+
+Crear el nuevo contacto con los datos proporcionados
+
+Agregar en el bloque que hizo el malloc\+:
+
+Crear una clave única\mbox{]} para el nuevo contacto
+
+Enlazar la lista\+:
+
+Agregar el nuevo contacto a la tabla hash\mbox{\Hypertarget{funciones__contacto_8cpp_ac443c8a2ba76213bf738b9bee7b9a5fe}\label{funciones__contacto_8cpp_ac443c8a2ba76213bf738b9bee7b9a5fe}} 
+\index{funciones\_contacto.cpp@{funciones\_contacto.cpp}!eliminar\_contacto@{eliminar\_contacto}}
+\index{eliminar\_contacto@{eliminar\_contacto}!funciones\_contacto.cpp@{funciones\_contacto.cpp}}
+\doxysubsubsection{\texorpdfstring{eliminar\_contacto()}{eliminar\_contacto()}}
+{\footnotesize\ttfamily void eliminar\+\_\+contacto (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{structContacto}{Contacto}} $>$ $\ast$}]{tabla\+\_\+hash,  }\item[{\mbox{\hyperlink{structContacto}{Contacto}} $\ast$\&}]{cabeza,  }\item[{\mbox{\hyperlink{structContacto}{Contacto}} $\ast$\&}]{nuevo\+\_\+contacto\+\_\+ptr,  }\item[{int $\ast$}]{ptr\+\_\+cantidad }\end{DoxyParamCaption})}
+
+
+
+Elimina contactos de la memoria dinamica con la opcion de borrar los contactos de la memoria cloud. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tabla\+\_\+hash} & tabla hash definida como memoria cloud \\
+\hline
+{\em cabeza} & El enlace para las listas enlazadas para la tabla hash (memoria cloud) \\
+\hline
+{\em nuevo\+\_\+contacto\+\_\+ptr} & El puntero de la direccion de la memoria dinamica \\
+\hline
+{\em ptr\+\_\+cantidad} & La cantidad de contactos en la memoria dinamica \\
+\hline
+\end{DoxyParams}
+Se encontro el contacto, eliminarlo
+
+Arreglo para error si solo se agrega un contacto.
+
+Mover el ultimo elemento al lugar del que se quiere eliminar
+
+Redimensionar el array para eliminar el último elemento
+
+Decrementar el valor de ptr\+\_\+cantidad después de la eliminación
+
+Error al redimensionar, manejar el error según sea necesario
+
+Para solucionar error cuando hay un solo contacto.
+
+Eliminacion del contacto en el hashtable
+
+Buscar si la clave existe en la tabla hash
+
+Conectar nodos
+
+Borrar de la tabla hash\mbox{\Hypertarget{funciones__contacto_8cpp_a33c1ebd48cf81fee006d08a1e18d07bb}\label{funciones__contacto_8cpp_a33c1ebd48cf81fee006d08a1e18d07bb}} 
+\index{funciones\_contacto.cpp@{funciones\_contacto.cpp}!mostrar\_contactos\_hashtable@{mostrar\_contactos\_hashtable}}
+\index{mostrar\_contactos\_hashtable@{mostrar\_contactos\_hashtable}!funciones\_contacto.cpp@{funciones\_contacto.cpp}}
+\doxysubsubsection{\texorpdfstring{mostrar\_contactos\_hashtable()}{mostrar\_contactos\_hashtable()}}
+{\footnotesize\ttfamily void mostrar\+\_\+contactos\+\_\+hashtable (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{structContacto}{Contacto}} $>$ $\ast$}]{tabla\+\_\+hash }\end{DoxyParamCaption})}
+
+
+
+Muestra los contactos dentro de la hashtable. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tabla\+\_\+hash} & tabla hash definida como memoria cloud \\
+\hline
+\end{DoxyParams}
+Desreferencia el puntero para acceder al mapa\mbox{\Hypertarget{funciones__contacto_8cpp_acbd7eb2cc5da16a08b6470b09ab54e2d}\label{funciones__contacto_8cpp_acbd7eb2cc5da16a08b6470b09ab54e2d}} 
+\index{funciones\_contacto.cpp@{funciones\_contacto.cpp}!mostrar\_contactos\_telefono@{mostrar\_contactos\_telefono}}
+\index{mostrar\_contactos\_telefono@{mostrar\_contactos\_telefono}!funciones\_contacto.cpp@{funciones\_contacto.cpp}}
+\doxysubsubsection{\texorpdfstring{mostrar\_contactos\_telefono()}{mostrar\_contactos\_telefono()}}
+{\footnotesize\ttfamily void mostrar\+\_\+contactos\+\_\+telefono (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structContacto}{Contacto}} $\ast$}]{nuevo\+\_\+contacto\+\_\+ptr,  }\item[{int $\ast$}]{ptr\+\_\+cantidad }\end{DoxyParamCaption})}
+
+
+
+Muestra los contactos organizados alfabeticamente dentro de la memoria dinamica. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nuevo\+\_\+contacto\+\_\+ptr} & El puntero de la direccion de la memoria dinamica \\
+\hline
+{\em ptr\+\_\+cantidad} & La cantidad de contactos en la memoria dinamica \\
+\hline
+\end{DoxyParams}
+Lista ordenada para imprimir
+
+Lista sin ordenar
+
+Para imprimir los valores

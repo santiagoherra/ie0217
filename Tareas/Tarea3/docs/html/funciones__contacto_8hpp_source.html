@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tarea #3 Memoria: Fichero Fuente /home/santiago/Documents/estructuras_datos/ie0217/Tareas/Tarea3/src/funciones_contacto.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tarea #3 Memoria
+   </div>
+   <div id="projectbrief">Este proyeto es una implementacion de un sistema de contactos con memoria dinamica y hashtbles, ademas de la utilizacion de listas enlazadas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">funciones_contacto.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="funciones__contacto_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef FUNCIONES_CONTACTO_HPP</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define FUNCIONES_CONTACTO_HPP</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="contacto_8hpp.html">contacto.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="funciones__contacto_8hpp.html#acbe95c5b823e1c09334b63593cc3bad9">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="funciones__contacto_8hpp.html#acbe95c5b823e1c09334b63593cc3bad9">agregar_contacto</a>(std::unordered_map&lt;std::string, Contacto &gt;* tabla_hash, <a class="code" href="structContacto.html">Contacto</a>*&amp; cabeza, <a class="code" href="structContacto.html">Contacto</a>* nuevo_contacto_ptr, <span class="keywordtype">int</span>* ptr_cantidad);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funciones__contacto_8hpp.html#ac443c8a2ba76213bf738b9bee7b9a5fe">eliminar_contacto</a>(std::unordered_map&lt;std::string, Contacto &gt;* tabla_hash, <a class="code" href="structContacto.html">Contacto</a>*&amp; cabeza, <a class="code" href="structContacto.html">Contacto</a>*&amp; nuevo_contacto_ptr, <span class="keywordtype">int</span>* ptr_cantidad);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funciones__contacto_8hpp.html#a33c1ebd48cf81fee006d08a1e18d07bb">mostrar_contactos_hashtable</a>(std::unordered_map&lt;std::string, Contacto &gt;* tabla_hash);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funciones__contacto_8hpp.html#acbd7eb2cc5da16a08b6470b09ab54e2d">mostrar_contactos_telefono</a>(<a class="code" href="structContacto.html">Contacto</a>* nuevo_contacto_ptr, <span class="keywordtype">int</span>* ptr_cantidad);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="acontacto_8hpp_html"><div class="ttname"><a href="contacto_8hpp.html">contacto.hpp</a></div><div class="ttdoc">Este es el header del struct de tipo Contacto, objeto que sera la base del programa.</div></div>
+<div class="ttc" id="afunciones__contacto_8hpp_html_a33c1ebd48cf81fee006d08a1e18d07bb"><div class="ttname"><a href="funciones__contacto_8hpp.html#a33c1ebd48cf81fee006d08a1e18d07bb">mostrar_contactos_hashtable</a></div><div class="ttdeci">void mostrar_contactos_hashtable(std::unordered_map&lt; std::string, Contacto &gt; *tabla_hash)</div><div class="ttdoc">Muestra los contactos dentro de la hashtable.</div><div class="ttdef"><b>Definition:</b> funciones_contacto.cpp:138</div></div>
+<div class="ttc" id="afunciones__contacto_8hpp_html_ac443c8a2ba76213bf738b9bee7b9a5fe"><div class="ttname"><a href="funciones__contacto_8hpp.html#ac443c8a2ba76213bf738b9bee7b9a5fe">eliminar_contacto</a></div><div class="ttdeci">void eliminar_contacto(std::unordered_map&lt; std::string, Contacto &gt; *tabla_hash, Contacto *&amp;cabeza, Contacto *&amp;nuevo_contacto_ptr, int *ptr_cantidad)</div><div class="ttdoc">Elimina contactos de la memoria dinamica con la opcion de borrar los contactos de la memoria cloud.</div><div class="ttdef"><b>Definition:</b> funciones_contacto.cpp:58</div></div>
+<div class="ttc" id="afunciones__contacto_8hpp_html_acbd7eb2cc5da16a08b6470b09ab54e2d"><div class="ttname"><a href="funciones__contacto_8hpp.html#acbd7eb2cc5da16a08b6470b09ab54e2d">mostrar_contactos_telefono</a></div><div class="ttdeci">void mostrar_contactos_telefono(Contacto *nuevo_contacto_ptr, int *ptr_cantidad)</div><div class="ttdoc">Muestra los contactos organizados alfabeticamente dentro de la memoria dinamica.</div><div class="ttdef"><b>Definition:</b> funciones_contacto.cpp:152</div></div>
+<div class="ttc" id="afunciones__contacto_8hpp_html_acbe95c5b823e1c09334b63593cc3bad9"><div class="ttname"><a href="funciones__contacto_8hpp.html#acbe95c5b823e1c09334b63593cc3bad9">agregar_contacto</a></div><div class="ttdeci">void agregar_contacto(std::unordered_map&lt; std::string, Contacto &gt; *tabla_hash, Contacto *&amp;cabeza, Contacto *nuevo_contacto_ptr, int *ptr_cantidad)</div><div class="ttdoc">Agrega mis contactos dentro de la tabla hash y dentro de la memoria dinamica dentro del archivo,...</div></div>
+<div class="ttc" id="astructContacto_html"><div class="ttname"><a href="structContacto.html">Contacto</a></div><div class="ttdoc">Es la definicion de contaco.</div><div class="ttdef"><b>Definition:</b> contacto.hpp:25</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

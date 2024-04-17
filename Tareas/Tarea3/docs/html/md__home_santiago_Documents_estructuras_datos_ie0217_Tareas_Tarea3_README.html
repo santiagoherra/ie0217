@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tarea #3 Memoria: Tarea 3</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tarea #3 Memoria
+   </div>
+   <div id="projectbrief">Este proyeto es una implementacion de un sistema de contactos con memoria dinamica y hashtbles, ademas de la utilizacion de listas enlazadas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Tarea 3 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><ul>
+<li>Curso IE0217</li>
+<li>Profesor Esteban Badilla</li>
+<li>Santiago Herra Castro C13721</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Ejecucion del programa</h2>
+<p>Primero asegurese de estar en la carpeta <b>src</b>. Despues en la terminal shell ingrese el comando. </p><div class="fragment"><div class="line">g++ -o ejecutable.exe main.cpp .cpp</div>
+</div><!-- fragment --><p> Esto le compilara el archivos para crearle el ejecutable <b>ejecutable.exe</b>. Para ejecutar el programa ingrese el comando. </p><div class="fragment"><div class="line">./ejecutable.exe</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md2"></a>
+Parte teorica.</h2>
+<p><b>1. ¿Qué es un algoritmo y cuáles son sus características principales?</b></p>
+<p>Un algoritmo es una secuencia de insturcciones definidas para poder realizar una instruccion. Sus caracteristicas principal son su precision en la definicion de entradas y salidas y general (no solo escrito en lenguaje de programacion).</p>
+<p><b>2. Explica la diferencia entre un algoritmo eficiente y uno ineficiente.</b></p>
+<p>La diferencia entre un algoritmo eficiente y uno ineficiente es la gestion de recursos disponibles al ejecutar el algoritmo. Cuando se habla de resursos se refiere a tiempo y memoria.</p>
+<p><b>3. ¿Qué es una estructura de datos y por qué son importantes?</b></p>
+<p>Una estructura de datos es un tipo de almacenamiento que se utiliza para poder guardar todo tipo de datos y poder organizarlos.</p>
+<p><b>4. Describe las diferencias entre una estructura de datos estática y una dinámica.</b></p>
+<p>Las estructuras de tipos de datos estaticas y dinamica son de tipo linear y las diferencias entre ellas son su cambio de tamaño en el tiempo de ejecucion. La estatica no puede cambiar de tamaño en el tiempo mientras que la dinamica si.</p>
+<p><b>5. ¿Qué es la memoria dinámica y cómo se gestiona en lenguajes de programación como C++, explique las operaciones que se pueden realizar?</b></p>
+<p>La memoria dinamica es la seccion de memoria que se puede manipular dentro de su ejecucion, en esta seccion se pueden realizar operaciones como <b>new</b> o <b>delete</b> para crear liberar bloques de memoria en su ejecucion.</p>
+<p><b>6. ¿Cuáles son las ventajas y desventajas de la memoria dinámica en comparación con la memoria estática?</b></p>
+<p>Las ventajas de la memoria dinamica: flexibilidad en memoria, efiencia en el uso de la memoria y maleabilidad a cambios en su uso dentro del programa. Por otro lado, las desventajas son fragmentacion de la memoria dentro del programa, esto puede suceder por la asignacion y liberacion de bloques de memoria. Riesgo a fugas de memoria o memory leaks.</p>
+<p><b>7. Explique qué es un árbol binario y cuáles son sus principales características.</b></p>
+<p>Un arbol binario es como una lista enlazada pero la diferencia es que cada nodo padre solo puede tenern como maximo 2 hijos o ramas que provienen de el.</p>
+<p><b>8. ¿Qué es una cola (queue) y en qué situaciones se utiliza comúnmente?</b></p>
+<p>Una cola es un tipo de estructura de dato, con la propiedad llamada FIFO (First In, First Out), esta explique el orden en que entran y salen los datos dentro de la cola, el primero que entra es la primero en salir. Un ejemplo de su uso es el de una lista con el orden de impresion de documentos.</p>
+<p><b>9. ¿Cuál es la diferencia entre una cola (queue) y una pila (stack)?</b></p>
+<p>La diferencia entre una cola y una pila es el orden de las salidas y las entradas. La pila usa LIFO (Last In, First Out), el ultimo que entra es el primero que sale y la cola usa FIFO (First In, First Out), el primero que entra es el primero en salir.</p>
+<p><b>10. Describe cómo funciona el algoritmo de inserción (insert) en una tabla hash.</b></p>
+<p>La algoritmo de insercion funciona agregando un dato en la tabla hash, agregando una llave que hace referencia a este dato.</p>
+<p><b>11. ¿Qué es la función de dispersión (hash function) y por qué es importante en las tablas hash?</b></p>
+<p>La funcion de dispersion es una funcion que convierte una llave numeric o alfanumerica en un numero integer utilizada como indice en la tabla hash. <a href="https://www.geeksforgeeks.org/hash-functions-and-list-types-of-hash-functions/">https://www.geeksforgeeks.org/hash-functions-and-list-types-of-hash-functions/</a></p>
+<p><b>12. ¿Cuál es la complejidad temporal promedio de búsqueda en una tabla hash bien implementada?</b></p>
+<p>La complejidad temporal promedio de busqueda en una tabla has es O(1) es decir, es constante.</p>
+<p><b>13. Explica cómo se realiza la operación de inserción (push) en una pila (stack).</b></p>
+<p>La operacion de insercion o push sirve para poder agregar un dato a la posicion superior de la pila, esto claro si existe espacio para este dato.</p>
+<p><b>14. ¿Cuál es la complejidad temporal de las operaciones de apilar (push) y desapilar (pop) en una pila?</b></p>
+<p>La complejidad temporal es igula debido que el proceso es al mismo valor, el suprior de la pila, entonces es igual.</p>
+<p><b>15. Describe cómo funciona una lista enlazada y cuáles son sus ventajas y desventajas.</b></p>
+<p>Las listas enlazadas estructura de datos llamadas nodos que tiene como propiedad a ellas mismas haciendo un enlace entre estructuras de datos.</p>
+<p><b>16. ¿Qué es un nodo en una lista enlazada y qué contiene?</b></p>
+<p>Un nodo es una estructura de dato, el cual tiene como propiedad un enlace a otra estructura de dato que tambien es un nodo, puede tener enlace definido o no pero si tiene la posibilidad de enlazar.</p>
+<p><b>17. ¿Cuál es la diferencia entre una lista enlazada simple y una lista enlazada doblemente enlazada?</b></p>
+<p>La diferencia entre la lista enlazada simple y la doblemente enlazada es la cantidad de enlaces que poseen los nodos de las listas. El enace sencillo se generado para poder ir hacia una sola direcccion mientras que el doblemente enlazado tiene la posibilidad de poder ir en 2 direccion, hacia adelante y hacia atras.</p>
+<p><b>18. ¿Cómo se realiza la eliminación (delete) de un nodo en una lista enlazada?</b></p>
+<p>Realizar la eliminacion de un nodo conlleva la actualiza de la lista debido al nodo faltante en la lista. Si el nodo es la cabecedera de la lista, se debe de cambiar el puntero de la cabeza por el siguiente nodo. Si el nodo esta en el medio, se debe de cambiar el puntero del siguiente nodo para que se sepa quien va despues. Por ultimo, si el nodo es el ultimo, se debe de cambiar el antepnultimo indicando que el siguiente nodo es nulo.</p>
+<p><b>19. Explica cómo funciona el algoritmo de recorrido (traversal) en un árbol binario.</b></p>
+<p>El algoritmo de recorrido (transversal) se divide en 3 recorridos, cada uno con el mismo objetivo pero diferentes tecnica. El algoritmo de recorrido esta hecho para poder recorrer cada nodo dentro de un arbol binario. Los tipos de recorridos son: Preorden, Postorden y Preorden.</p>
+<p><b>20. ¿Cuál es la complejidad temporal del recorrido en preorden, en orden y en postorden en un árbol binario balanceado?</b></p>
+<p>La complejidad temporal entre los recorridos preorden, postorden y inorden son la misma debido que lo que cambia es el orden en que visitan los nodos.</p>
+<p><b>21. Explique la diferencia entre la notación Big O (O) y la notación Omega () en el análisis de la complejidad temporal de los algoritmos. Proporciona un ejemplo de un algoritmo y determina su complejidad temporal utilizando ambas notaciones Big O y Omega.</b></p>
+<p>La diferencia entre la notacion Big O y Omega es el enfoca en el analisis de los resultados de un algoritmo, el Big O, representa el limite superior del tiempo de ejecucion, dando la complejidad del peor de los casos de un algoritmo. El omega, representa el limite inferior del tiempo de ejecucion, dando la complejidad del mejor de los casos de un algoritmo. Por ejemplo si se tuviera que adivinar un numero del 1 al 10, el Big O seria 10, y el Omega seria 1, dando el peor y mejor caso respectivamente. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
