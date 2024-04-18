@@ -106,6 +106,9 @@ Funciones</h2></td></tr>
 <tr class="memitem:acbd7eb2cc5da16a08b6470b09ab54e2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="funciones__contacto_8cpp.html#acbd7eb2cc5da16a08b6470b09ab54e2d">mostrar_contactos_telefono</a> (<a class="el" href="structContacto.html">Contacto</a> *nuevo_contacto_ptr, int *ptr_cantidad)</td></tr>
 <tr class="memdesc:acbd7eb2cc5da16a08b6470b09ab54e2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra los contactos organizados alfabeticamente dentro de la memoria dinamica.  <a href="funciones__contacto_8cpp.html#acbd7eb2cc5da16a08b6470b09ab54e2d">Más...</a><br /></td></tr>
 <tr class="separator:acbd7eb2cc5da16a08b6470b09ab54e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc41ad772b08f9c1252e0d9a7453063a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="funciones__contacto_8cpp.html#afc41ad772b08f9c1252e0d9a7453063a">ordenar_contactos_por_nombre</a> (<a class="el" href="structContacto.html">Contacto</a> *nuevo_contacto_ptr, int *ptr_cantidad)</td></tr>
+<tr class="memdesc:afc41ad772b08f9c1252e0d9a7453063a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordena los contactos de manera alfabetica con un ordenamiento burbuja.  <a href="funciones__contacto_8cpp.html#afc41ad772b08f9c1252e0d9a7453063a">Más...</a><br /></td></tr>
+<tr class="separator:afc41ad772b08f9c1252e0d9a7453063a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>La definicion de las funciones utilizadas en el main. </p>
@@ -289,6 +292,46 @@ Funciones</h2></td></tr>
 <p>Lista ordenada para imprimir</p>
 <p>Lista sin ordenar</p>
 <p>Para imprimir los valores</p>
+
+</div>
+</div>
+<a id="afc41ad772b08f9c1252e0d9a7453063a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc41ad772b08f9c1252e0d9a7453063a">&#9670;&nbsp;</a></span>ordenar_contactos_por_nombre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ordenar_contactos_por_nombre </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structContacto.html">Contacto</a> *&#160;</td>
+          <td class="paramname"><em>nuevo_contacto_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>ptr_cantidad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ordena los contactos de manera alfabetica con un ordenamiento burbuja. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nuevo_contacto_ptr</td><td>El puntero de la direccion de la memoria dinamica </td></tr>
+    <tr><td class="paramname">ptr_cantidad</td><td>La cantidad de contactos en la memoria dinamica </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Algoritmo de ordenamiento de burbuja implementado en clases siguientes</p>
+<p>Compara los nombres de los contactos y los intercambia si están en el orden incorrecto</p>
+<p>Intercambio de los contactos</p>
 
 </div>
 </div>

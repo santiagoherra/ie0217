@@ -30,7 +30,9 @@ void \mbox{\hyperlink{funciones__contacto_8hpp_ac443c8a2ba76213bf738b9bee7b9a5fe
 void \mbox{\hyperlink{funciones__contacto_8hpp_a33c1ebd48cf81fee006d08a1e18d07bb}{mostrar\+\_\+contactos\+\_\+hashtable}} (std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{structContacto}{Contacto}} $>$ $\ast$tabla\+\_\+hash)
 \begin{DoxyCompactList}\small\item\em Muestra los contactos dentro de la hashtable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{funciones__contacto_8hpp_acbd7eb2cc5da16a08b6470b09ab54e2d}{mostrar\+\_\+contactos\+\_\+telefono}} (\mbox{\hyperlink{structContacto}{Contacto}} $\ast$nuevo\+\_\+contacto\+\_\+ptr, int $\ast$ptr\+\_\+cantidad)
-\begin{DoxyCompactList}\small\item\em Muestra los contactos organizados alfabeticamente dentro de la memoria dinamica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Muestra los contactos organizados alfabeticamente dentro de la memoria dinamica. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funciones__contacto_8hpp_afc41ad772b08f9c1252e0d9a7453063a}{ordenar\+\_\+contactos\+\_\+por\+\_\+nombre}} (\mbox{\hyperlink{structContacto}{Contacto}} $\ast$nuevo\+\_\+contacto\+\_\+ptr, int $\ast$ptr\+\_\+cantidad)
+\begin{DoxyCompactList}\small\item\em Ordena los contactos de manera alfabetica con un ordenamiento burbuja. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descripción detallada}
@@ -149,4 +151,25 @@ Lista ordenada para imprimir
 
 Lista sin ordenar
 
-Para imprimir los valores
+Para imprimir los valores\mbox{\Hypertarget{funciones__contacto_8hpp_afc41ad772b08f9c1252e0d9a7453063a}\label{funciones__contacto_8hpp_afc41ad772b08f9c1252e0d9a7453063a}} 
+\index{funciones\_contacto.hpp@{funciones\_contacto.hpp}!ordenar\_contactos\_por\_nombre@{ordenar\_contactos\_por\_nombre}}
+\index{ordenar\_contactos\_por\_nombre@{ordenar\_contactos\_por\_nombre}!funciones\_contacto.hpp@{funciones\_contacto.hpp}}
+\doxysubsubsection{\texorpdfstring{ordenar\_contactos\_por\_nombre()}{ordenar\_contactos\_por\_nombre()}}
+{\footnotesize\ttfamily void ordenar\+\_\+contactos\+\_\+por\+\_\+nombre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structContacto}{Contacto}} $\ast$}]{nuevo\+\_\+contacto\+\_\+ptr,  }\item[{int $\ast$}]{ptr\+\_\+cantidad }\end{DoxyParamCaption})}
+
+
+
+Ordena los contactos de manera alfabetica con un ordenamiento burbuja. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nuevo\+\_\+contacto\+\_\+ptr} & El puntero de la direccion de la memoria dinamica \\
+\hline
+{\em ptr\+\_\+cantidad} & La cantidad de contactos en la memoria dinamica \\
+\hline
+\end{DoxyParams}
+Algoritmo de ordenamiento de burbuja implementado en clases siguientes
+
+Compara los nombres de los contactos y los intercambia si están en el orden incorrecto
+
+Intercambio de los contactos
