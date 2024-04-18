@@ -47,4 +47,12 @@ void mostrar_contactos_hashtable(std::unordered_map<std::string, Contacto >* tab
  */
 void mostrar_contactos_telefono(Contacto* nuevo_contacto_ptr, int* ptr_cantidad);
 
+/**
+ * @brief Ordena los contactos de manera alfabetica con un ordenamiento burbuja
+ * 
+ * @param nuevo_contacto_ptr El puntero de la direccion de la memoria dinamica
+ * @param ptr_cantidad La cantidad de contactos en la memoria dinamica
+ */
+void ordenar_contactos_por_nombre(Contacto* nuevo_contacto_ptr, int* ptr_cantidad);
+
 #endif

@@ -61,6 +61,7 @@ int main(){
             break;
 
         case MOSTRAR_TELEFONO:
+            ordenar_contactos_por_nombre(nuevo_contacto_ptr, ptr_cantidad);
             mostrar_contactos_telefono(nuevo_contacto_ptr, ptr_cantidad);
             break;
 

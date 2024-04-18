@@ -170,3 +170,19 @@ void mostrar_contactos_telefono(Contacto* nuevo_contacto_ptr, int* ptr_cantidad)
     }
 
 }
+
+void ordenar_contactos_por_nombre(Contacto* nuevo_contacto_ptr, int* ptr_cantidad) {
+    /// Algoritmo de ordenamiento de burbuja implementado en clases siguientes
+    for (int i = 0; i < *ptr_cantidad - 1; i++) {
+        for (int j = 0; j < *ptr_cantidad - i - 1; j++) {
+            /// Compara los nombres de los contactos y los intercambia si están en el orden incorrecto
+            if (nuevo_contacto_ptr[j].nombre > nuevo_contacto_ptr[j + 1].nombre) {
+                /// Intercambio de los contactos
+                Contacto temp = nuevo_contacto_ptr[j];
+                nuevo_contacto_ptr[j] = nuevo_contacto_ptr[j + 1];
+                nuevo_contacto_ptr[j + 1] = temp;
+            }
+        }
+    }
+}
+
