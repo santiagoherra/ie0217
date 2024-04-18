@@ -3,8 +3,8 @@
 using namespace std;
 
 int main(){
-    float *ptr, *new_ptr;
-    ptr = (float*)malloc(5 *sizeof(float));//generando primer bloque de memoria
+    float *new_ptr;
+    float *ptr = (float*)malloc(5 *sizeof(float));//generando primer bloque de memoria
     if(ptr == NULL){
         cout << "Memory ALlocation Failed";
         exit(1);
