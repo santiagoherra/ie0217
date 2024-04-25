@@ -16,7 +16,7 @@ void bubbleSort(int arr[], int n) {
     }
 }
 
-//Algoritmo de selection sort
+//Algoritmo de selection sortxxx
 void selectionSort(int arr[], int n) {
     for (int i = 0; i < n - 1; ++i) {
         int min_index = i;
