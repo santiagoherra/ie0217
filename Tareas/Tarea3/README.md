@@ -9,7 +9,7 @@ https://66206cd946cd8fd099d24e27--mellow-daffodil-740183.netlify.app/
 ### Ejecucion del programa 
 Primero asegurese de estar en la carpeta **src**. Despues en la terminal shell ingrese el comando.
 ```
-g++ -o ejecutable.exe main.cpp .cpp
+g++ -o ejecutable.exe main.cpp funciones_contacto.cpp
 ```
 Esto le compilara el archivos para crearle el ejecutable **ejecutable.exe**. Para ejecutar el programa ingrese el comando.
 ```
