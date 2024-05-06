@@ -35,6 +35,16 @@ public:
         }
     }
 
+    void imprimirMatriz(){
+        for (int i = 0; i < filas; ++i) {
+            for (int j = 0; j < columnas; ++j) {
+                std::cout << data[i][j] << " ";  // si se ve mal utilizar std::setw ajusta el ancho de la columna
+            }
+            std::cout << std::endl;
+            }
+        }
+
+
     // Sobrecarga de operador +
     Matriz<T> operator+(const Matriz<T>& other) {
         if (this->filas != other.filas || this->columnas != other.columnas)

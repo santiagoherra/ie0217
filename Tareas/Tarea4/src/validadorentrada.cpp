@@ -3,7 +3,12 @@
 
 class ValidadorDeEntrada {
 public:
-    template<typename T>
-    void validarTipoDato(const std::string& input);
+    void validarTipoDato(Matriz<T> m1){
 
-}
+    }
+
+    void validarDimensiones(int filas, int columnas){
+
+    }
+
+};
