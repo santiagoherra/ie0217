@@ -1,5 +1,6 @@
 #include "matriz.hpp"
 #include <exception>
+#include <complex>
 
 template<typename T>
 Matriz<T>::Matriz(int filas, int columnas) : filas(filas), columnas(columnas) {
