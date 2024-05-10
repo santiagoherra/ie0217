@@ -3,12 +3,12 @@
 
 template<typename T>
 bool OperacionesBasicas<T>::validarSumaResta(const Matriz<T>& a, const Matriz<T>& b) {
-    return a.filas == b.filas && a.columnas == b.columnas;
+    return a.getFilas() == b.getFilas() && a.getColumnas() == b.getColumnas();
 }
 
 template<typename T>
 bool OperacionesBasicas<T>::validarMultiplicacion(const Matriz<T>& a, const Matriz<T>& b) {
-    return a.columnas == b.filas;
+    return a.getColumnas() == b.getFilas();
 }
 
 template<typename T>
@@ -41,6 +41,8 @@ void OperacionesBasicas<T>::multiplicacion(Matriz<T> a, Matriz<T> b) {
     c.imprimirMatriz(); 
 }
 
-
+template class OperacionesBasicas<int>;
+template class OperacionesBasicas<float>;
+template class OperacionesBasicas<std::complex<double>>;
 
 

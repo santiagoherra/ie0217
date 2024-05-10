@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <complex>
 
 template<typename T>
 class Matriz {
@@ -15,6 +16,9 @@ public:
     Matriz(int filas, int columnas);
     ~Matriz();
 
+    int getFilas() const;
+    int getColumnas() const;
+
     void setDimensiones(int filas, int columnas);
     void llenarMatriz();
     void imprimirMatriz();
@@ -23,5 +27,11 @@ public:
     Matriz<T> operator-(const Matriz<T>& other);
     Matriz<T> operator*(const Matriz<T>& other);
 };
+
+// Explicit template instantiation
+template class Matriz<int>;
+template class Matriz<float>;
+template class Matriz<std::complex<double>>;
+
 
 #endif
