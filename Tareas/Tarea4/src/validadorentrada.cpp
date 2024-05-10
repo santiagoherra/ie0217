@@ -1,14 +1,10 @@
-#include <string>
-#include <stdexcept>
+#include "validadorentrada.hpp"
 
-class ValidadorDeEntrada {
-public:
-    void validarTipoDato(Matriz<T> m1){
+template<typename T>
+void ValidadorDeEntrada<T>::validarTipoDato(Matriz<T> m1){
 
-    }
+}
 
-    void validarDimensiones(int filas, int columnas){
-
-    }
-
-};
+void ValidadorDeEntrada<T>::validarDimensiones(int filas, int columnas){
+    
+}

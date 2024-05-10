@@ -1,53 +1,46 @@
-#include <vector>
-#include <iostream>
+#include "matriz.hpp"
 #include <exception>
 
 template<typename T>
-class Matriz {
-private:
-    std::vector<std::vector<T>> data;
-    int filas;
-    int columnas;
+Matriz<T>::Matriz(int filas, int columnas) : filas(filas), columnas(columnas) {
+    data.resize(filas, std::vector<T>(columnas));
+}
 
-public:
-    // Constructor y destructor
-    Matriz(int filas, int columnas) : filas(filas), columnas(columnas) {
-        data.resize(filas, std::vector<T>(columnas));
-    }
+template<typename T>
+Matriz<T>::~Matriz() {}
 
-    ~Matriz();
+template<typename T>
+void Matriz<T>::setDimensiones(int filas, int columnas) {
+    if (filas <= 0 || columnas <= 0)
+        throw std::invalid_argument("Dimensiones invalidas.");
+    this->filas = filas;
+    this->columnas = columnas;
+    data.resize(filas, std::vector<T>(columnas));
+}
 
-    // Metodos de entrada, define el tammano de la matriz
-    void setDimensiones(int filas, int columnas) {
-        if (filas <= 0 || columnas <= 0)
-            throw std::invalid_argument("Dimensiones invalidas.");
-        this->filas = filas;
-        this->columnas = columnas;
-        data.resize(filas, std::vector<T>(columnas));
-    }
-
-    void llenarMatriz() { //Ingresa los valores de la matriz
-        std::cout << "Ingrese los elementos de la matriz:" << std::endl;
-        for (int i = 0; i < filas; ++i) {
-            for (int j = 0; j < columnas; ++j) {
-                std::cin >> data[i][j];
-            }
+template<typename T>
+void Matriz<T>::llenarMatriz() {
+    std::cout << "Ingrese los elementos de la matriz:" << std::endl;
+    for (int i = 0; i < filas; ++i) {
+        for (int j = 0; j < columnas; ++j) {
+            std::cin >> data[i][j];
         }
     }
+}
 
-    void imprimirMatriz(){
-        for (int i = 0; i < filas; ++i) {
-            for (int j = 0; j < columnas; ++j) {
-                std::cout << data[i][j] << " ";  // si se ve mal utilizar std::setw ajusta el ancho de la columna
-            }
-            std::cout << std::endl;
-            }
+template<typename T>
+void Matriz<T>::imprimirMatriz() {
+    for (int i = 0; i < filas; ++i) {
+        for (int j = 0; j < columnas; ++j) {
+            std::cout << data[i][j] << " ";
         }
+        std::cout << std::endl;
+    }
+}
 
-
-    // Sobrecarga de operador +
-    Matriz<T> operator+(const Matriz<T>& other) {
-        if (this->filas != other.filas || this->columnas != other.columnas)
+template<typename T>
+Matriz<T> Matriz<T>::operator+(const Matriz<T>& other) {
+    if (this->filas != other.filas || this->columnas != other.columnas)
             throw std::invalid_argument("Las dimensiones no permiten la suma.");
         Matriz<T> result(this->filas, this->columnas);
         for (int i = 0; i < this->filas; ++i) {
@@ -56,11 +49,11 @@ public:
             }
         }
         return result;
-    }
+}
 
-    //Sobrecarga de operador -
-    Matriz<T> operator-(const Matriz<T>& other){
-        if (this->columnas != other.filas || this->columnas != other.columnas)
+template<typename T>
+Matriz<T> Matriz<T>::operator-(const Matriz<T>& other) {
+    if (this->columnas != other.filas || this->columnas != other.columnas)
             throw std::invalid_argument("Las dimensiones no permiten la resta.");
         Matriz<T> result(this->filas, this->columnas);
         for (int i = 0; i < this->filas; ++i) {
@@ -69,11 +62,11 @@ public:
             }
         }
         return result;
-    }
+}
 
-    //Sobrecarga de operador *
-    Matriz<T> operator*(const Matriz <T>& other){
-        if (this->columnas != other.filas)
+template<typename T>
+Matriz<T> Matriz<T>::operator*(const Matriz<T>& other) {
+    if (this->columnas != other.filas)
             throw std::invalid_argument("Las dimensiones no permiten la multiplicacion.");
         Matriz<T> result(other.filas, this->columnas);
         for (int i= 0; i < other.filas; ++i){
@@ -85,5 +78,4 @@ public:
             }
         }
         return result;
-    }
-};
+}
