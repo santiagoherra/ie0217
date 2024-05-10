@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Tarea #4: Tarea 3</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Tarea #4
+   </div>
+   <div id="projectbrief">Se realizo una implementacion de matrices para poder ver el uso de excepciones y plantillas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Tarea 3 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><ul>
+<li>Curso IE0217</li>
+<li>Profesor Esteban Badilla</li>
+<li>Santiago Herra Castro C13721</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Documentancion en Netlify</h2>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Ejecucion del programa</h2>
+<p>Primero asegurese de estar en la carpeta <b>src</b>. Despues en la terminal shell ingrese el comando. </p><div class="fragment"><div class="line">g++ -o ejecutable.exe main.cpp matriz.cpp operacionesbasicas.cpp validadorentrada.cpp</div>
+</div><!-- fragment --><p> Esto le compilara el archivos para crearle el ejecutable <b>ejecutable.exe</b>. Para ejecutar el programa ingrese el comando. </p><div class="fragment"><div class="line">./ejecutable.exe</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+Parte teorica.</h2>
+<ol type="1">
+<li><p class="startli"><b>Definición de Templates:</b> Explique el concepto de templates en C++ y proporcione un ejemplo simple.</p>
+<p class="startli">Un template es una plantilla de codigo que se puede utilizar para la simplificacion en el desarrollo de un programa, es como reutilizar codigo. Un ejemplo es la utilizacion de plantilla de un variable para su uso en una funcion.</p>
+</li>
+<li><p class="startli"><b>Sobrecarga de Plantillas:</b> ¿Cómo se realiza la sobrecarga de funciones con plantillas en C++?</p>
+<p class="startli">La sobrecarga de funciones se realiza creando mulitpls definiciones de una misma funcion utilizando plantillas pero con diferentes parametros para que la funcion asi tengo diferentes comportamientos.</p>
+</li>
+<li><p class="startli"><b>Plantillas de Clases:</b> Explique cómo se pueden utilizar plantillas en la definición de clases en C++.</p>
+<p class="startli">Las plantillas se puede utilizar para la definir clases para trabajar con distintos tipos de datos. Para esto se debe de crear la una plantilla de tipo clase donde se tiene como argumento de tipo template.</p>
+</li>
+<li><p class="startli"><b>Manejo de Excepciones:</b> Describa los bloques try, catch y throw y cómo se utilizan para el manejo de excepciones en C++.</p>
+<p class="startli">El bloque try es un tipo de bloque secuencial que esta diseñado para encontrar un error dentro del codigo. El bloque cath agarra el error encontrado por el try. El bloque throw se utiliza para poder lanzar una excepcion desde cualquier parte del codigo, es utilizado para poder hacer excepciones personalizadas.</p>
+</li>
+<li><p class="startli"><b>Excepciones Estándar:</b> Nombre al menos tres excepciones estándar proporcionadas por C++ y proporcione ejemplos de situaciones en las que podrían ser útiles.</p>
+<p class="startli">Algunos excepciones comunes en C++ son: std::runtime_error, std::invalid_argument y std::range_error. Estas excepciones son utiles para saber que clase de error se esta cometiendo en la compilacion o ejecucion del codigo. Conocer que tipo de excepcion se esta agarrando hace mas facil poder corregir el error para el programador.</p>
+</li>
+<li><p class="startli"><b>Política de Manejo de Excepciones:</b> ¿Qué es una política de manejo de excepciones y por qué es importante considerarla al diseñar software?</p>
+<p class="startli">La politica de manejo de excepciones son un conjunto de reglas utilizadas para poder asegurarse que las que excepciones se estan manejando de manera adecuada en el desarrollo de software. Estas son importantes para poder definir con exactitud las excepciones y poder manejarlas segun sea la aplicacion del software.</p>
+</li>
+<li><p class="startli"><b>Noexcept:</b> Explique el propósito de la palabra clave noexcept y cómo se utiliza en C++.</p>
+<p class="startli">La palabra clave noexcept es una indicador en funciones u operadores que le indica al compilador que no se lanzara una excepcion cuando se ejecute la funcion o el operador.</p>
+</li>
+<li><p class="startli"><b>Diferencia entre std::logic_error y std::runtime_error:</b> Explique la diferencia entre las excepciones std::logic_error y std::runtime_error.</p>
+<p class="startli">La diferencia entre std::logic_error y std::runtime_error es cuando se tira el error. logic_error se da cuando no se da el resultado querido por el codigo mientras que runtime_error se da cuando se genera un error de logica en la ejecucion, este ultimo es automatico.</p>
+</li>
+<li><p class="startli"><b>Excepción no capturada:</b> Explique qué ocurre cuando una excepción no es capturada.</p>
+<p class="startli">Cuando una excepcion no es capturada el sistema abortaria el programa haciendo que termine y la excepcion se imprimiria en el programa.</p>
+</li>
+<li><p class="startli"><b>Contenedores STL:</b> Nombre cinco contenedores diferentes de la STL y explique brevemente en qué situaciones sería apropiado usar cada uno.</p>
+<p class="startli">Algunos contenedores de STL son:</p><ol type="a">
+<li>vector: Son utilizados para mantener una secuencia de datos.</li>
+<li>stack: Son utulizados cuando se quiere tener una estructura de tipo stack.</li>
+<li>set: Son utilizados cuando se quiere tener valores ordenados dentro del contenedor.</li>
+<li>map: Son utilizados cuando se desea tener un diccionario de valores. <br  />
+</li>
+<li>list: Son utilizados cuando se desea agregar todo tipo de datos en un contenedor.</li>
+</ol>
+</li>
+<li><p class="startli"><b>Iteradores en STL:</b> Explique el concepto de iteradores en la STL y cómo se utilizan para acceder a elementos en contenedores.</p>
+<p class="startli">Un iterador es como un puntero hecho para apuntar hacia objetos dentro de contenedores, para poder acceder a los objetos se debe de iterar dentro del contenedor mediante un punto de referencia, este puede ser el inicio o el final.</p>
+</li>
+<li><b>Algoritmos STL:</b> Proporcione ejemplos de al menos tres algoritmos de la STL y describa sus funciones básicas.<ol type="a">
+<li>find: Busca un elemento en un rango.</li>
+<li>count: Cuenta el numero de ocurrencias de un elemento en un rango.</li>
+<li>sort: Ordena un rango en orden ascendente.</li>
+</ol>
+</li>
+<li><p class="startli"><b>Algoritmos Personalizados:</b> ¿Cómo podría utilizar un algoritmo personalizado con la STL?</p>
+<p class="startli">Si es posible utilizar algoritmos personalizados con STL, depende de la aplicacion pero mientras se conozca el funcionamiento del STL es posible mezclar los dos enfoques en el programa. </p>
+</li>
+</ol>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

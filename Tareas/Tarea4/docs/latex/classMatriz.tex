@@ -1,0 +1,292 @@
+\hypertarget{classMatriz}{}\doxysection{Referencia de la plantilla de la Clase Matriz$<$ T $>$}
+\label{classMatriz}\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+
+
+Es una clase de tipo matriz.  
+
+
+
+
+{\ttfamily \#include $<$matriz.\+hpp$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatriz_aaf573ec9eee84e31ac7b433ba4c1f6f6}{Matriz}} (int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Este es el constructor de la matriz. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz_aa1f93719088c45ebbc20e0fb6df415d8}{$\sim$\+Matriz}} ()
+\begin{DoxyCompactList}\small\item\em Este es el destructor de la matriz. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMatriz_aec0dbbec64397e24f4d3ca914e6563e3}{get\+Filas}} () const
+\begin{DoxyCompactList}\small\item\em Este obtiene las filas de la matriz debido que son privadas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMatriz_a6a79899e6830b0511445cec0defb0317}{get\+Columnas}} () const
+\begin{DoxyCompactList}\small\item\em Este obtiene las columnas de la matriz debido que son privadas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMatriz_a74fa26c973781e58e00a9310b1f2e14d}{set\+Dimensiones}} (int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Este es el metodo que define las dimensiones de la matriz, para posible implementacion de cambio de dimensiones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMatriz_a98b9f704c074788ff6001066f45f7aec}{llenar\+Matriz}} ()
+\begin{DoxyCompactList}\small\item\em Este llena la matriz de los numeros deseados. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMatriz_ae52d9f3f1759993ddf97dc084249cb0b}{imprimir\+Matriz}} ()
+\begin{DoxyCompactList}\small\item\em Este imprime la matriz para poder ser vista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMatriz_a0b8934ae3fa68f99d95087b7bd17cadc}{llenar\+Matriz\+Aleatoriamente}} ()
+\begin{DoxyCompactList}\small\item\em Este llena la matriz de numeros de tipo que se escoge de manera aleatoria. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \mbox{\hyperlink{classMatriz_a69b58b5df666b185ce379804d4a450a0}{operator+}} (const \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Este es una sobrecarga del operador + para matrices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \mbox{\hyperlink{classMatriz_a8e41019b1490d5552e9c4b813d625ea0}{operator-\/}} (const \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Este es una sobrecarga del operador -\/ para las matrices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \mbox{\hyperlink{classMatriz_ac98ce89c4e8a3b2c222764e79e04887a}{operator$\ast$}} (const \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Este es una sobrecarga del operador $\ast$ para las matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+\subsubsection*{template$<$typename T$>$\newline
+class Matriz$<$ T $>$}
+
+Es una clase de tipo matriz. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & Se utiliza una plantilla para pder ingresar el tipo de dato que se desee \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classMatriz_aaf573ec9eee84e31ac7b433ba4c1f6f6}\label{classMatriz_aaf573ec9eee84e31ac7b433ba4c1f6f6}} 
+\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}!Matriz@{Matriz}}
+\index{Matriz@{Matriz}!Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Matriz()}{Matriz()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$\+::\mbox{\hyperlink{classMatriz}{Matriz}} (\begin{DoxyParamCaption}\item[{int}]{filas,  }\item[{int}]{columnas }\end{DoxyParamCaption})}
+
+
+
+Este es el constructor de la matriz. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em filas} & \\
+\hline
+{\em columnas} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMatriz_aa1f93719088c45ebbc20e0fb6df415d8}\label{classMatriz_aa1f93719088c45ebbc20e0fb6df415d8}} 
+\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}!````~Matriz@{$\sim$Matriz}}
+\index{````~Matriz@{$\sim$Matriz}!Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$Matriz()}{~Matriz()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classMatriz}{Matriz}}}
+
+
+
+Este es el destructor de la matriz. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & ~\newline
+ \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classMatriz_a6a79899e6830b0511445cec0defb0317}\label{classMatriz_a6a79899e6830b0511445cec0defb0317}} 
+\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}!getColumnas@{getColumnas}}
+\index{getColumnas@{getColumnas}!Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getColumnas()}{getColumnas()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$\+::get\+Columnas}
+
+
+
+Este obtiene las columnas de la matriz debido que son privadas. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatriz_aec0dbbec64397e24f4d3ca914e6563e3}\label{classMatriz_aec0dbbec64397e24f4d3ca914e6563e3}} 
+\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}!getFilas@{getFilas}}
+\index{getFilas@{getFilas}!Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getFilas()}{getFilas()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$\+::get\+Filas}
+
+
+
+Este obtiene las filas de la matriz debido que son privadas. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Devuelve}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatriz_ae52d9f3f1759993ddf97dc084249cb0b}\label{classMatriz_ae52d9f3f1759993ddf97dc084249cb0b}} 
+\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}!imprimirMatriz@{imprimirMatriz}}
+\index{imprimirMatriz@{imprimirMatriz}!Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{imprimirMatriz()}{imprimirMatriz()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$\+::imprimir\+Matriz}
+
+
+
+Este imprime la matriz para poder ser vista. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & ~\newline
+ \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{classMatriz_a98b9f704c074788ff6001066f45f7aec}\label{classMatriz_a98b9f704c074788ff6001066f45f7aec}} 
+\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}!llenarMatriz@{llenarMatriz}}
+\index{llenarMatriz@{llenarMatriz}!Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{llenarMatriz()}{llenarMatriz()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$\+::llenar\+Matriz}
+
+
+
+Este llena la matriz de los numeros deseados. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & ~\newline
+ \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{classMatriz_a0b8934ae3fa68f99d95087b7bd17cadc}\label{classMatriz_a0b8934ae3fa68f99d95087b7bd17cadc}} 
+\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}!llenarMatrizAleatoriamente@{llenarMatrizAleatoriamente}}
+\index{llenarMatrizAleatoriamente@{llenarMatrizAleatoriamente}!Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{llenarMatrizAleatoriamente()}{llenarMatrizAleatoriamente()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$\+::llenar\+Matriz\+Aleatoriamente}
+
+
+
+Este llena la matriz de numeros de tipo que se escoge de manera aleatoria. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & ~\newline
+ \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{classMatriz_ac98ce89c4e8a3b2c222764e79e04887a}\label{classMatriz_ac98ce89c4e8a3b2c222764e79e04887a}} 
+\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Este es una sobrecarga del operador $\ast$ para las matrices. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatriz_a69b58b5df666b185ce379804d4a450a0}\label{classMatriz_a69b58b5df666b185ce379804d4a450a0}} 
+\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Este es una sobrecarga del operador + para matrices. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatriz_a8e41019b1490d5552e9c4b813d625ea0}\label{classMatriz_a8e41019b1490d5552e9c4b813d625ea0}} 
+\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Este es una sobrecarga del operador -\/ para las matrices. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatriz_a74fa26c973781e58e00a9310b1f2e14d}\label{classMatriz_a74fa26c973781e58e00a9310b1f2e14d}} 
+\index{Matriz$<$ T $>$@{Matriz$<$ T $>$}!setDimensiones@{setDimensiones}}
+\index{setDimensiones@{setDimensiones}!Matriz$<$ T $>$@{Matriz$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setDimensiones()}{setDimensiones()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classMatriz}{Matriz}}$<$ T $>$\+::set\+Dimensiones (\begin{DoxyParamCaption}\item[{int}]{filas,  }\item[{int}]{columnas }\end{DoxyParamCaption})}
+
+
+
+Este es el metodo que define las dimensiones de la matriz, para posible implementacion de cambio de dimensiones. 
+
+
+\begin{DoxyTemplParams}{Parámetros del template}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em filas} & \\
+\hline
+{\em columnas} & ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+/home/santiago/\+Documents/ie0217/\+Tareas/\+Tarea4/src/\mbox{\hyperlink{matriz_8hpp}{matriz.\+hpp}}\item 
+/home/santiago/\+Documents/ie0217/\+Tareas/\+Tarea4/src/\mbox{\hyperlink{matriz_8cpp}{matriz.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,71 @@
+
+\begin{DoxyItemize}
+\item Curso IE0217
+\item Profesor Esteban Badilla
+\item Santiago Herra Castro C13721
+\end{DoxyItemize}\hypertarget{md__home_santiago_Documents_ie0217_Tareas_Tarea4_README_autotoc_md1}{}\doxysubsection{Documentancion en Netlify}\label{md__home_santiago_Documents_ie0217_Tareas_Tarea4_README_autotoc_md1}
+\hypertarget{md__home_santiago_Documents_ie0217_Tareas_Tarea4_README_autotoc_md2}{}\doxysubsection{Ejecucion del programa}\label{md__home_santiago_Documents_ie0217_Tareas_Tarea4_README_autotoc_md2}
+Primero asegurese de estar en la carpeta {\bfseries{src}}. Despues en la terminal shell ingrese el comando. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g++ -\/o ejecutable.exe main.cpp matriz.cpp operacionesbasicas.cpp validadorentrada.cpp}
+
+\end{DoxyCode}
+ Esto le compilara el archivos para crearle el ejecutable {\bfseries{ejecutable.\+exe}}. Para ejecutar el programa ingrese el comando. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./ejecutable.exe}
+
+\end{DoxyCode}
+\hypertarget{md__home_santiago_Documents_ie0217_Tareas_Tarea4_README_autotoc_md3}{}\doxysubsection{Parte teorica.}\label{md__home_santiago_Documents_ie0217_Tareas_Tarea4_README_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Definición de Templates\+:}} Explique el concepto de templates en C++ y proporcione un ejemplo simple.
+
+Un template es una plantilla de codigo que se puede utilizar para la simplificacion en el desarrollo de un programa, es como reutilizar codigo. Un ejemplo es la utilizacion de plantilla de un variable para su uso en una funcion.
+\item {\bfseries{Sobrecarga de Plantillas\+:}} ¿\+Cómo se realiza la sobrecarga de funciones con plantillas en C++?
+
+La sobrecarga de funciones se realiza creando mulitpls definiciones de una misma funcion utilizando plantillas pero con diferentes parametros para que la funcion asi tengo diferentes comportamientos.
+\item {\bfseries{Plantillas de Clases\+:}} Explique cómo se pueden utilizar plantillas en la definición de clases en C++.
+
+Las plantillas se puede utilizar para la definir clases para trabajar con distintos tipos de datos. Para esto se debe de crear la una plantilla de tipo clase donde se tiene como argumento de tipo template.
+\item {\bfseries{Manejo de Excepciones\+:}} Describa los bloques try, catch y throw y cómo se utilizan para el manejo de excepciones en C++.
+
+El bloque try es un tipo de bloque secuencial que esta diseñado para encontrar un error dentro del codigo. El bloque cath agarra el error encontrado por el try. El bloque throw se utiliza para poder lanzar una excepcion desde cualquier parte del codigo, es utilizado para poder hacer excepciones personalizadas.
+\item {\bfseries{Excepciones Estándar\+:}} Nombre al menos tres excepciones estándar proporcionadas por C++ y proporcione ejemplos de situaciones en las que podrían ser útiles.
+
+Algunos excepciones comunes en C++ son\+: std\+::runtime\+\_\+error, std\+::invalid\+\_\+argument y std\+::range\+\_\+error. Estas excepciones son utiles para saber que clase de error se esta cometiendo en la compilacion o ejecucion del codigo. Conocer que tipo de excepcion se esta agarrando hace mas facil poder corregir el error para el programador.
+\item {\bfseries{Política de Manejo de Excepciones\+:}} ¿\+Qué es una política de manejo de excepciones y por qué es importante considerarla al diseñar software?
+
+La politica de manejo de excepciones son un conjunto de reglas utilizadas para poder asegurarse que las que excepciones se estan manejando de manera adecuada en el desarrollo de software. Estas son importantes para poder definir con exactitud las excepciones y poder manejarlas segun sea la aplicacion del software.
+\item {\bfseries{Noexcept\+:}} Explique el propósito de la palabra clave noexcept y cómo se utiliza en C++.
+
+La palabra clave noexcept es una indicador en funciones u operadores que le indica al compilador que no se lanzara una excepcion cuando se ejecute la funcion o el operador.
+\item {\bfseries{Diferencia entre std\+::logic\+\_\+error y std\+::runtime\+\_\+error\+:}} Explique la diferencia entre las excepciones std\+::logic\+\_\+error y std\+::runtime\+\_\+error.
+
+La diferencia entre std\+::logic\+\_\+error y std\+::runtime\+\_\+error es cuando se tira el error. logic\+\_\+error se da cuando no se da el resultado querido por el codigo mientras que runtime\+\_\+error se da cuando se genera un error de logica en la ejecucion, este ultimo es automatico.
+\item {\bfseries{Excepción no capturada\+:}} Explique qué ocurre cuando una excepción no es capturada.
+
+Cuando una excepcion no es capturada el sistema abortaria el programa haciendo que termine y la excepcion se imprimiria en el programa.
+\item {\bfseries{Contenedores STL\+:}} Nombre cinco contenedores diferentes de la STL y explique brevemente en qué situaciones sería apropiado usar cada uno.
+
+Algunos contenedores de STL son\+:
+\begin{DoxyEnumerate}
+\item vector\+: Son utilizados para mantener una secuencia de datos.
+\item stack\+: Son utulizados cuando se quiere tener una estructura de tipo stack.
+\item set\+: Son utilizados cuando se quiere tener valores ordenados dentro del contenedor.
+\item map\+: Son utilizados cuando se desea tener un diccionario de valores. ~\newline
+
+\item list\+: Son utilizados cuando se desea agregar todo tipo de datos en un contenedor.
+\end{DoxyEnumerate}
+\item {\bfseries{Iteradores en STL\+:}} Explique el concepto de iteradores en la STL y cómo se utilizan para acceder a elementos en contenedores.
+
+Un iterador es como un puntero hecho para apuntar hacia objetos dentro de contenedores, para poder acceder a los objetos se debe de iterar dentro del contenedor mediante un punto de referencia, este puede ser el inicio o el final.
+\item {\bfseries{Algoritmos STL\+:}} Proporcione ejemplos de al menos tres algoritmos de la STL y describa sus funciones básicas.
+\begin{DoxyEnumerate}
+\item find\+: Busca un elemento en un rango.
+\item count\+: Cuenta el numero de ocurrencias de un elemento en un rango.
+\item sort\+: Ordena un rango en orden ascendente.
+\end{DoxyEnumerate}
+\item {\bfseries{Algoritmos Personalizados\+:}} ¿\+Cómo podría utilizar un algoritmo personalizado con la STL?
+
+Si es posible utilizar algoritmos personalizados con STL, depende de la aplicacion pero mientras se conozca el funcionamiento del STL es posible mezclar los dos enfoques en el programa. 
+\end{DoxyEnumerate}
