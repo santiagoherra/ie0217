@@ -1,16 +1,36 @@
+/**
+ * @file matriz.cpp
+ * @author Santiago Herra
+ * @brief Este es el archivo de codigo de la clase matriz, donde se dara descrpcion de todos los metodos utilizados por la matriz
+ * @version 0.1
+ * @date 2024-05-10
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 #include "matriz.hpp"
 #include <exception>
 #include <complex>
 #include <limits>
 
+/// @brief Este es el constructor de la matriz
+/// @tparam T 
+/// @param filas 
+/// @param columnas 
 template<typename T>
 Matriz<T>::Matriz(int filas, int columnas) : filas(filas), columnas(columnas) {
     data.resize(filas, std::vector<T>(columnas));
 }
 
+/// @brief Este es el destructor de la matriz
+/// @tparam T 
 template<typename T>
 Matriz<T>::~Matriz() {}
 
+/// @brief Este es el metodo que define las dimensiones de la matriz, para posible implementacion de cambio de dimensiones
+/// @tparam T 
+/// @param filas 
+/// @param columnas 
 template<typename T>
 void Matriz<T>::setDimensiones(int filas, int columnas) {
     if (filas <= 0 || columnas <= 0)
@@ -19,14 +39,23 @@ void Matriz<T>::setDimensiones(int filas, int columnas) {
     this->columnas = columnas;
     data.resize(filas, std::vector<T>(columnas));
 }
+
+/// @brief Este obtiene las filas de la matriz debido que son privadas
+/// @tparam T 
+/// @return 
 template<typename T>
 int Matriz<T>::getFilas()const{
      return filas; }
 
+/// @brief Este obtiene las columnas de la matriz debido que son privadas
+/// @tparam T 
+/// @return 
 template<typename T>
 int Matriz<T>::getColumnas()const {
      return columnas; }
 
+/// @brief Este llena la matriz de los numeros deseados
+/// @tparam T 
 template<typename T>
 void Matriz<T>::llenarMatriz() {
     std::cout << "Ingrese los elementos de la matriz:" << std::endl;
@@ -47,6 +76,8 @@ void Matriz<T>::llenarMatriz() {
     }
 }
 
+/// @brief Este llena la matriz de numeros de tipo que se escoge de manera aleatoria
+/// @tparam T 
 template<typename T>
 void Matriz<T>::llenarMatrizAleatoriamente() {
     std::random_device rd;  // Obtener un número aleatorio del hardware
@@ -78,6 +109,8 @@ void Matriz<T>::llenarMatrizAleatoriamente() {
     }
 }
 
+/// @brief Este imprime la matriz para poder ser vista
+/// @tparam T 
 template<typename T>
 void Matriz<T>::imprimirMatriz() {
     for (int i = 0; i < filas; ++i) {
@@ -88,6 +121,10 @@ void Matriz<T>::imprimirMatriz() {
     }
 }
 
+/// @brief Este es una sobrecarga del operador + para matrices
+/// @tparam T 
+/// @param other 
+/// @return 
 template<typename T>
 Matriz<T> Matriz<T>::operator+(const Matriz<T>& other) {
     if (this->filas != other.filas || this->columnas != other.columnas)
@@ -100,7 +137,10 @@ Matriz<T> Matriz<T>::operator+(const Matriz<T>& other) {
         }
         return result;
 }
-
+/// @brief Este es una sobrecarga del operador - para las matrices
+/// @tparam T 
+/// @param other 
+/// @return 
 template<typename T>
 Matriz<T> Matriz<T>::operator-(const Matriz<T>& other) {
     if (this->columnas != other.filas || this->columnas != other.columnas)
@@ -114,6 +154,10 @@ Matriz<T> Matriz<T>::operator-(const Matriz<T>& other) {
         return result;
 }
 
+/// @brief Este es una sobrecarga del operador * para las matrices
+/// @tparam T 
+/// @param other 
+/// @return 
 template<typename T>
 Matriz<T> Matriz<T>::operator*(const Matriz<T>& other) {
     if (this->columnas != other.filas)
