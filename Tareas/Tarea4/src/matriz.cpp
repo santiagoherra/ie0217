@@ -117,18 +117,20 @@ Matriz<T> Matriz<T>::operator-(const Matriz<T>& other) {
 template<typename T>
 Matriz<T> Matriz<T>::operator*(const Matriz<T>& other) {
     if (this->columnas != other.filas)
-            throw std::invalid_argument("Las dimensiones no permiten la multiplicacion.");
-        Matriz<T> result(other.filas, this->columnas);
-        for (int i= 0; i < other.filas; ++i){
-            for (int j = 0; j < this->columnas; ++j){
-                for (int k; k < other.filas; --k){
-                    T valor;
-                    valor += this->data[k][i] + other.data[j][k];
-                    result.data[i][j] = valor;
-                }
+        throw std::invalid_argument("Las dimensiones no permiten la multiplicacion.");
+
+    Matriz<T> result(this->filas, other.columnas); 
+    for (int i = 0; i < this->filas; ++i) {
+        for (int j = 0; j < other.columnas; ++j) {
+            T valor = T(); 
+            for (int k = 0; k < this->columnas; ++k) { 
+                valor += this->data[i][k] * other.data[k][j]; 
             }
+            result.data[i][j] = valor;
         }
-        return result;
+    }
+    return result;
 }
+
 
 
