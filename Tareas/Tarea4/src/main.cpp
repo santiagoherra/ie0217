@@ -18,7 +18,7 @@
         m1.setDimensiones(filas1,columnas1);
         m2.setDimensiones(filas2, columnas2);
 
-        std::cout << "Ingrese el tipo de operacion que desea realizar.\n1) Suma\n2) Resta\n 3) Multiplicacion\n" << std::endl;
+        std::cout << "Ingrese el tipo de operacion que desea realizar.\n1) Suma\n2) Resta\n3) Multiplicacion\n" << std::endl;
         std::cin >> tipo_operacion;
 
         std::cout << "\nPara la matriz 1\n" << std::endl;
@@ -39,7 +39,9 @@
 
             switch (opcion_menu){
             case 1:
-                //llenar con valores aleatorios
+                std::cout << "Se ingresaran valores aleatorios a las matrices" << std::endl;
+                m1.llenarMatrizAleatoriamente();
+                m2.llenarMatrizAleatoriamente();
                 break;
 
             case 2:
@@ -52,14 +54,17 @@
             case 3:
                 switch (tipo_operacion){
                 case 1:
+                    std::cout << "\nRealizando suma\n" << std::endl;
                     ope.suma(m1,m2);
                     break;
 
                 case 2:
+                    std::cout << "\nRealizando resta\n" << std::endl;
                     ope.resta(m1,m2);
                     break;
                 
                 case 3:
+                    std::cout << "\nRealizando multiplicacion\n" << std::endl;
                     ope.multiplicacion(m1,m2);
                     break;
             
@@ -88,18 +93,18 @@ int main() {
 
     ValidadorDeEntrada<int> vali;
 
-    std::cout << "Ingrese el tamaño de las filas de las matrices: " << std::endl;
+    std::cout << "Ingrese el tamaño de la fila de la matriz 1: " << std::endl;
     std::cin >> filas1;
     std::cin.ignore();
-    std::cout << "Ingrese el tamaño de las columnas de las matrices: " << std::endl;
+    std::cout << "Ingrese el tamaño de la columna de la matriz 1: " << std::endl;
     std::cin >> columnas1;
 
     vali.validarDimensiones(filas1,columnas1);
 
-    std::cout << "Ingrese el tamaño de las filas de las matrices: " << std::endl;
+    std::cout << "Ingrese el tamaño de la fila de la matriz 2: " << std::endl;
     std::cin >> filas2;
     std::cin.ignore();
-    std::cout << "Ingrese el tamaño de las columnas de las matrices: " << std::endl;
+    std::cout << "Ingrese el tamaño de la columna de la matriz 2: " << std::endl;
     std::cin >> columnas2;
 
     vali.validarDimensiones(filas2,columnas2);

@@ -36,10 +36,43 @@ void Matriz<T>::llenarMatriz() {
             std::cin >> elemento;
             if (std::cin.fail()) {
                 std::cin.clear();  // Limpia el error de flujo
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Ignora el resto de la línea
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Entrada inválida, intente de nuevo: ";
+                    j--;
+            }
+            else{
+                data[i][j] = elemento;
+            }
+        }
+    }
+}
 
-                // Lanza una excepción si el tipo ingresado es incorrecto
-                throw std::invalid_argument("Se ingresó un tipo de dato incorrecto para la matriz.");
+template<typename T>
+void Matriz<T>::llenarMatrizAleatoriamente() {
+    std::random_device rd;  // Obtener un número aleatorio del hardware
+    std::mt19937 gen(rd()); // Generador de números (Mersenne Twister)
+
+    if constexpr (std::is_integral<T>::value) {
+        std::uniform_int_distribution<> dis(0, 10);  // Distribución para enteros
+        for (int i = 0; i < filas; ++i) {
+            for (int j = 0; j < columnas; ++j) {
+                data[i][j] = dis(gen);
+            }
+        }
+    } else if constexpr (std::is_floating_point<T>::value) {
+        std::uniform_real_distribution<> dis(0.0, 10.0);  // Distribución para flotantes
+        for (int i = 0; i < filas; ++i) {
+            for (int j = 0; j < columnas; ++j) {
+                data[i][j] = dis(gen);
+            }
+        }
+    } else if constexpr (std::is_same<T, std::complex<double>>::value) {
+        std::uniform_real_distribution<> dis(0.0, 10.0);  // Distribución para parte real e imaginaria
+        for (int i = 0; i < filas; ++i) {
+            for (int j = 0; j < columnas; ++j) {
+                double real_part = dis(gen);
+                double imag_part = dis(gen);
+                data[i][j] = std::complex<double>(real_part, imag_part);
             }
         }
     }

@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 #include <complex>
+#include <random>
 
 template<typename T>
 class Matriz {
@@ -22,13 +23,14 @@ public:
     void setDimensiones(int filas, int columnas);
     void llenarMatriz();
     void imprimirMatriz();
+    void llenarMatrizAleatoriamente();
 
     Matriz<T> operator+(const Matriz<T>& other);
     Matriz<T> operator-(const Matriz<T>& other);
     Matriz<T> operator*(const Matriz<T>& other);
 };
 
-// Explicit template instantiation
+
 template class Matriz<int>;
 template class Matriz<float>;
 template class Matriz<std::complex<double>>;
