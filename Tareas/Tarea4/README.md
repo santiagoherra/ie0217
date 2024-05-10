@@ -9,7 +9,7 @@
 ### Ejecucion del programa 
 Primero asegurese de estar en la carpeta **src**. Despues en la terminal shell ingrese el comando.
 ```
-g++ -o ejecutable.exe main.cpp .cpp 
+g++ -o ejecutable.exe main.cpp matriz.cpp operacionesbasicas.cpp validadorentrada.cpp
 ```
 Esto le compilara el archivos para crearle el ejecutable **ejecutable.exe**. Para ejecutar el programa ingrese el comando.
 ```
