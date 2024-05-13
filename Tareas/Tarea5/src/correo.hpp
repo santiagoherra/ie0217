@@ -12,7 +12,7 @@ class ValidarEmail{
         std::string extension;
 
     public:
-        ValidarEmail();
+        void conseguirCorreo();
         void validarCorreo();
 
 };

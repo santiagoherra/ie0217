@@ -8,6 +8,8 @@ enum opciones{
 int main(){
     bool salir = false;
     int opcion;
+    ValidarEmail correo;
+    std::string correo_comprobar;
 
     do{
         std::cout << "\nQue desea realizar?\n" << std::endl;
@@ -17,7 +19,7 @@ int main(){
 
         switch (opcion){
         case CORREO:
-            ValidarEmail correo;
+            correo.conseguirCorreo();
             correo.validarCorreo();
             break;
         
