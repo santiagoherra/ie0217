@@ -7,14 +7,11 @@
 
 
 ### Ejecucion del programa 
-Primero asegurese de estar en la carpeta **src**. Despues en la terminal shell ingrese el comando.
-```
-g++ -o ejecutable.exe main.cpp 
-```
-Esto le compilara el archivos para crearle el ejecutable **ejecutable.exe**. Para ejecutar el programa ingrese el comando.
-```
-./ejecutable.exe
-```
+La ejecucion del programa se dara mediante un archivo Makefile, los comandos del Makfile son:
+- clean: Limpia el directorio de archivos compilados y deja unicamente el codigo fuente.
+- build: Compila el codigo fuente y genera el ejecutable.
+- run: Ejecuta el ejecutable.
+- all: Compila y corre el juego.
 
 ### Parte teorica.
 
