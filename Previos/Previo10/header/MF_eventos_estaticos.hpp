@@ -1,5 +1,6 @@
 #include <wx/wx.h>
 
+//Modificacion de la mainframe para poder ver los eventos dinamicos
 class MainFrame : public wxFrame {
 public:
     MainFrame(const wxString& title);
