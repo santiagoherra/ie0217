@@ -1,6 +1,7 @@
 #include "../header/MainFrame.hpp"
 #include <wx/wx.h>
 
+//Segun el evento del teclado se escogen las funciones de los botones
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) {
     wxPanel* panel = new wxPanel(this);
     wxButton* btn1 = new wxButton(panel, wxID_ANY, "Button 1", wxPoint(300, 150), wxSize(200, 100));

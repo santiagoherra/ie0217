@@ -1,18 +1,22 @@
 #include "../header/MF_eventos_estaticos.hpp"
 #include <wx/wx.h>
 
+
+//Enum utilizado para tener un ID para los eventos
 enum IDs {
     BUTTON_ID = 2,
     SLIDER_ID = 3,
     TEXT_ID = 4
 };
 
+//Implementacion de los eventos
 wxBEGIN_EVENT_TABLE(MainFrame, wxFrame)
     EVT_BUTTON(BUTTON_ID, MainFrame::OnButtonClicked)
     EVT_SLIDER(SLIDER_ID, MainFrame::OnSliderChanged)
     EVT_TEXT(TEXT_ID, MainFrame::OnTextChanged)
 wxEND_EVENT_TABLE()
 
+//Implementacion de eventos de tipos estaticos
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) {
     wxPanel* panel = new wxPanel(this);
 

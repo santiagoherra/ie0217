@@ -2,6 +2,7 @@
 #include <wx/wx.h>
 #include <wx/spinctrl.h>
 
+//Se implementaron diferentes funciones para poder ver la mayoria de controladores disponibles
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) {
     wxPanel* panel = new wxPanel(this);
 

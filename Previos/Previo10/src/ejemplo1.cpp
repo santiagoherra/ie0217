@@ -1,5 +1,6 @@
 #include <wx/wx.h>
 
+//Este es un ejemplo de prueba que muestra el funcionamiento de los textos, hecho para probar si si funciona la libreria
 class App : public wxApp {
 public:
     bool OnInit() {

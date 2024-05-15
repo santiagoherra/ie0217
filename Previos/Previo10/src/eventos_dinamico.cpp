@@ -1,6 +1,7 @@
 #include "../header/MF_eventos_dinamicos.hpp"
 #include <wx/wx.h>
 
+//Es un evento de tipo dinamico el cual es posible interactuar con los controladores de mayor manera que con los estaticos.
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) {
     wxPanel* panel = new wxPanel(this);
 

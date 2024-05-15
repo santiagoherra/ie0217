@@ -13,6 +13,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) 
     CreateStatusBar();
 }
 
+//Propagacion de eventos para mostrar la salida de cuando se preciona un boton
 void MainFrame::OnAnyButtonClicked(wxCommandEvent& evt) {
     wxLogMessage("Button Clicked");
 }

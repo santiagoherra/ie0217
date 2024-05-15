@@ -1,6 +1,7 @@
 #include "../header/propagacion.hpp"
 #include <wx/wx.h>
 
+//Propagacion de eventos de cadena con mas botones
 MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title) {
     wxPanel* panel = new wxPanel(this);
 
