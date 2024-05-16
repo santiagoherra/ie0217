@@ -1,3 +1,13 @@
+/**
+ * @file correo.cpp
+ * @author Santiago Herra
+ * @brief Este es el archivo que describe los metodos de las clases
+ * @version 0.1
+ * @date 2024-05-16
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 #include "correo.hpp"
 #include <regex>
 #include <stdexcept>
