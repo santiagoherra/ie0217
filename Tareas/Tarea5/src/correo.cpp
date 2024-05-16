@@ -19,6 +19,14 @@ void ValidarEmail::validarCorreo(){
     std::smatch partes;
 
    bool encontrado = std::regex_search(correo, partes, patron);
+
+    std::regex arroba_regex(R"(@)");  
+
+    if (!std::regex_search(correo, arroba_regex)) {
+        std::cerr << "Error: El correo debe contener el carácter '@'." << std::endl;
+        return;  
+    }
+
     try{
     if (encontrado && partes.size() == 4) { // partes.size() debe ser 4 (0 para el total, y 1-3 para los grupos)
         nombre = partes[1].str();
@@ -74,6 +82,43 @@ void ValidarEmail::validarCorreo(){
     //validacion del dominio:
 
     std::cout << dominio << std::endl;
+
+    //validacion de extension
+
+    std::cout << extension << std::endl;
+    
+    try {
+        // Esta expresión regular verifica que cada segmento de la extensión tenga entre 2 y 6 letras.
+        // También admite extensiones compuestas separadas por puntos.
+        std::regex patron_extension(R"(^([a-zA-Z]{2,6})(\.[a-zA-Z]{2,6})*$)");
+
+        if (!std::regex_match(extension, patron_extension)) {
+            throw std::runtime_error("La extensión no cumple con el formato requerido.");
+        }
+
+        // Verificar que no contiene números ni caracteres especiales
+        std::regex patron_invalido(R"([^a-zA-Z\.])");  // Cualquier cosa que no sea letra o punto es inválido
+
+        if (std::regex_search(extension, patron_invalido)) {
+            throw std::runtime_error("La extensión contiene caracteres inválidos.");
+        }
+
+        // Verificar que la longitud de cada segmento sea correcta
+        std::istringstream stream(extension);
+        std::string segment;
+        while (getline(stream, segment, '.')) {
+            if (segment.empty()) continue;  // Ignora segmentos vacíos (podría pasar por puntos consecutivos, aunque no debería)
+            if (segment.length() < 2 || segment.length() > 6) {
+                throw std::runtime_error("Segmento de extensión '" + segment + "' no tiene la longitud adecuada (2-6 caracteres).");
+            }
+        }
+
+    } catch (const std::exception& e) {
+        std::cerr << "Error encontrado en la extensión: " << e.what() << std::endl;
+        valido = false;  // Asumimos que valido es una variable booleana de control
+        return;
+    }
+
 
     if(!valido){
         std::cout << "Correo valido!" <<std::endl;
