@@ -54,11 +54,8 @@ void ValidarEmail::validarCorreo(){
 
         bool condicion2 = std::regex_search(nombre, patron_caracteres_especiales);
 
-        int contador = 0;
-
-        for(char caracter : nombre){
-            contador++;
-        }
+        int contador;
+        contador = nombre.length();
 
         if(contador > 15){
             throw std::length_error("El nombre posee mas de 15 caracteres");
@@ -106,8 +103,8 @@ void ValidarEmail::validarCorreo(){
         std::istringstream stream(extension);
         std::string segment;
         while (getline(stream, segment, '.')) {
-            if (segment.empty()) continue;  // Ignora segmentos vacíos (podría pasar por puntos consecutivos, aunque no debería)
-            if (segment.length() < 3 || segment.length() < 7) {
+            if (segment.empty()) continue;  // Ignora segmentos vacíos 
+            if (segment.length() < 2 || segment.length() > 6) {
                 throw std::runtime_error("Segmento de extensión '" + segment + "' no tiene la longitud adecuada (2-6 caracteres).");
             }
         }
