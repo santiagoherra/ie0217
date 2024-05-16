@@ -1,0 +1,174 @@
+\label{index_md__home_santiago_Documents_ie0217_Tareas_Tarea5_README}%
+\Hypertarget{index_md__home_santiago_Documents_ie0217_Tareas_Tarea5_README}%
+
+\begin{DoxyItemize}
+\item Curso IE0217
+\item Profesor Esteban Badilla
+\item Santiago Herra Castro C13721
+\end{DoxyItemize}\hypertarget{index_autotoc_md1}{}\doxysubsection{Documentancion en Netlify}\label{index_autotoc_md1}
+\hypertarget{index_autotoc_md2}{}\doxysubsection{Ejecucion del programa}\label{index_autotoc_md2}
+La ejecucion del programa se dara mediante un archivo Makefile, los comandos del Makfile son\+:
+\begin{DoxyItemize}
+\item clean\+: Limpia el directorio de archivos compilados y deja unicamente el codigo fuente.
+\item build\+: Compila el codigo fuente y genera el ejecutable.
+\item run\+: Ejecuta el ejecutable.
+\item all\+: Compila y corre el juego.
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysubsection{Parte teorica.}\label{index_autotoc_md3}
+{\bfseries{1. ¿\+Qué es una expresión regular y cuál es su propósito en programación?}}
+
+Una expresion regular representa un patron utilizado para buscar y manipular cadenas de texto de una manera mas flexible y poderosa. Su proposito es realizar busquedas de patrones dentro de texto y poder manipularlas segun sea el proposito.
+
+{\bfseries{2. ¿\+Qué significan los caracteres especiales . y $\ast$ en una expresión regular?}} ~\newline
+
+
+El caracter especial $\ast$$\ast$.$\ast$$\ast$ representa cualquier caracter, excepto una linea de salto y el caracter especial $\ast$ representa cero o mas repeticiones del elemento anterior.
+
+{\bfseries{3. ¿\+Cómo se pueden agrupar subexpresiones en una expresión regular?}}
+
+Se pueden agrupar subexpresiones en una expresion regular usando los grupos $\ast$$\ast$()$\ast$$\ast$, de esta manera se pueden aplicar los caracteres especiales a los grupos deseados.
+
+{\bfseries{4. ¿\+Qué función cumple la barra invertida \textbackslash{} en una expresión regular?}} ~\newline
+
+
+La barra invertida cumple la funcion de decirle al programa que se quiere utilizar un caracter especial como objeto de busqueda, por ejemplo, si se quiere buscar el caracter . se debe de utilizar la barra invertida.
+
+{\bfseries{5. Explique cómo se pueden capturar coincidencias usando paréntesis en una expresión regular.}} ~\newline
+
+
+Se pueden capturar coincidencias agrupando un grupo de caracteres y usando el caracter especial $^\wedge$.
+
+{\bfseries{6. ¿\+Cuál es la diferencia entre \textbackslash{}d y \textbackslash{}D en una expresión regular?}} ~\newline
+
+
+Se utiliza el caracter especial \textbackslash{}d para poder coincidir un digito es una expresion regular mientras que \textbackslash{}D es utilizado para no coincidir con digitos.
+
+{\bfseries{7. ¿\+Cómo se representa una clase de caracteres en una expresión regular?}} ~\newline
+
+
+Se puede representar una clase de caracteres usando \mbox{[}\mbox{]}, de esta manera se representan para su dicho uso.
+
+{\bfseries{8. ¿\+Cuál es el propósito del modificador \$ en una expresión regular?}} ~\newline
+
+
+El caracter de tipo \$, es de tipo ancla y es utilizado para marcar el final de un grupo de caracteres.
+
+{\bfseries{9. Describa cómo validar una dirección de correo electrónico usando expresiones regulares en C++.}} ~\newline
+
+
+Afortunadamente, validar un correo e c++ es muy facil con el uso de librerias como regex, en esta se puede realizar una funcion que verifique el patron de direccion de correo electronico y esta devuelve un booleano si se comprueba que es valida. La verificacion se realiza con la forma\+: R\char`\"{}($^\wedge$\mbox{[}a-\/z\+A-\/\+Z0-\/9\+\_\+.+-\/\mbox{]}+@\mbox{[}a-\/z\+A-\/\+Z0-\/9-\/\mbox{]}+\textbackslash{}.\mbox{[}a-\/z\+A-\/\+Z0-\/9-\/.\mbox{]}+\$)\char`\"{}
+
+{\bfseries{10. Discuta las implicaciones de rendimiento de utilizar expresiones regulares en aplicaciones de software. ¿\+Qué técnicas se pueden aplicar para optimizar una expresión regular compleja, especialmente en contextos donde el tiempo de ejecución es crítico?}} ~\newline
+
+
+Una expresion regular comleja puede consumir muchos recursos del programa debido a que esta usualmente posee cadenas de caracteres muy largas y muchas cuantificaciones ambiguas (.$\ast$ o .+) haciendo que el programa tenga que realizar multiples analisis para poder encontrar una coincidencia o ninguna. Las maneras de reducir este uso de recursos para expresiones regulares complejas es evitando cuantificaciones ambiguas como .$\ast$ o .+, utilizando caracteres de anclaje para detonar cuando comienza y termina el analisis y hasta el uso de diferentes tipos de compiladores los cuales se enfocan en el analisis de texto.
+
+{\bfseries{11. ¿\+Qué es un Makefile y cuál es su función en un proyecto de C++?}} ~\newline
+
+
+Un Makefile es un archivo que simplifica y ayuda a decidir que parte del programa se deben de compilar. Esto es muy util cuando se tiene un programa muy grande.
+
+{\bfseries{12. ¿\+Cuál es la diferencia entre una regla implícita y una regla explícita en un Makefile?}} ~\newline
+
+
+Las reglas explícitas en un Makefile especifican exactamente cómo construir un objetivo (target) particular y sus dependencias. Estas reglas son definidas directamente por el usuario y se escriben específicamente para crear un archivo o conjunto de archivos determinados. Las reglas implícitas son reglas generalizadas que permiten a make inferir cómo construir un archivo basado en su nombre y extensión, sin que se especifique explícitamente en el Makefile para cada archivo individual.
+
+{\bfseries{13. Explique el propósito de las macros (variables) en un Makefile.}} ~\newline
+
+
+En los Makefiles, las macros son más comúnmente llamadas variables. Estas variables se utilizan para almacenar valores que se pueden reutilizar en todo el Makefile. Son muy útiles para simplificar la gestión de los Makefiles y hacerlos más mantenibles y legibles. Estas variables pueden almacenar comandos, rutas de archivos, opciones de compilador, nombres de directorios y otros valores que se usan frecuentemente a lo largo del Makefile.
+
+{\bfseries{14. ¿\+Qué es un objetivo (target) en un Makefile y cómo se define?}} ~\newline
+
+
+Un target en un Makefile representa generalmente un archivo que se necesita construir o generar a partir de otros archivos, que son sus dependencias.
+
+{\bfseries{15. ¿\+Por qué es útil dividir un proyecto de C++ en múltiples archivos fuente y cómo ayuda el uso de Makefiles en este enfoque?}} ~\newline
+
+
+Es util dividir un proyecto en diferentes archivos gracias que cuando se tiene que compilar el proyecto durante su revision, si se realizan cambios en el codigo no se tiene que volver a compilar todos los archivos solo en los que se realizaron cambios, asi disminuyendo los recursos utilizados y el tiempo de compilacion.
+
+{\bfseries{16. ¿\+Cómo se pueden definir dependencias entre los archivos fuente en un Makefile?}} ~\newline
+
+
+Las dependencias se pueden definir cuando se definen los targets, de esta manera el makefile sabe cuales archivos representan las dependencias.
+
+{\bfseries{17. Explique cómo se puede compilar un proyecto en diferentes sistemas operativos usando un solo Makefile.}} ~\newline
+
+
+Se puede realizar teniendo un makefile donde si detecta que sistema operativo se esta usando, cambia de parametros para que dependiendo del sistema operativo se puedan utilizar los mismos comandos y el makefile si funcione.
+
+{\bfseries{18. ¿\+Cuál es el propósito de los comandos clean y all en un Makefile?}} ~\newline
+
+
+El proposit de el comando all es compilar todos los archivos fuente y el comando clean es borrar todos los archivos ejecutables realizados por el comando all.
+
+{\bfseries{19. Describa cómo se pueden pasar argumentos desde la línea de comandos a un Makefile.}} ~\newline
+
+
+Para poder pasar argumentos desde la linea de comandos en un makefile, se debe de modificar el compilador para poder sobreescribir la ejecucion del programa segun se desee para poder agregar los argumentos en el momento de ejecucion.
+
+{\bfseries{20. Proporcione un ejemplo de una regla en un Makefile que compile un archivo fuente .cpp a un archivo objeto .o}}
+
+Un ejemplo de una regla en makefile que compile un archivo fuente .cpp a un archivo de objeto es\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Definición de las variables del compilador y las banderas de compilación}
+\DoxyCodeLine{CXX := g++}
+\DoxyCodeLine{CXXFLAGS := -\/Wall -\/O2}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Lista de archivos fuente}
+\DoxyCodeLine{SOURCE := main.cpp matriz.cpp}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Convertir los nombres de los archivos fuente a archivos objeto}
+\DoxyCodeLine{OBJS := \$(SRCS:.cpp=.o)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Regla por defecto}
+\DoxyCodeLine{all: programa}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Enlazar los archivos objeto en el ejecutable final}
+\DoxyCodeLine{programa: \$(OBJS)}
+\DoxyCodeLine{    \$(CXX) \$(OBJS) -\/o \$@}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Compilar archivos fuente .cpp a archivos objeto .o}
+\DoxyCodeLine{\%.o: \%.cpp}
+\DoxyCodeLine{    \$(CXX) \$(CXXFLAGS) -\/c \$< -\/o \$@}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Limpiar archivos generados}
+\DoxyCodeLine{clean:}
+\DoxyCodeLine{    rm -\/f \$(OBJS) programa}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md4}{}\doxysubsection{Parte teorica -\/\+Makefile}\label{index_autotoc_md4}
+{\bfseries{1. ¿\+Qué suelen contener las variables CC, CFLAGS, CXXFLAGS y LDFLAGS en un makefile?}} ~\newline
+
+
+La variable CC, contiene el tipo compilador que se utilizara para compilar. La variable CFLAGS, contiene las bandera de compilacion que se utilizaran, esto enfocado en la optimizacion del compilador. La variable CXXFLAGS, es parecido a CFLAGS pero da las banderas en compilacion de manera general. La variable LDFLAGS, indica las opciones que tendra el enlazador para indicar rutas entre librerias.
+
+{\bfseries{2. ¿\+De qué se compone una regla en un Makefile?}} ~\newline
+
+
+Las reglas son compuestas de targets, listas de dependencias y comandos para construir el target.
+
+{\bfseries{3. Defina qué es un target y cómo se relaciona con sus prerequisitos.}} ~\newline
+
+
+Los targets son los resultados que se desean obtener al ejecutar un makefile.
+
+{\bfseries{4. ¿\+Para qué se utiliza la bandera -\/I, -\/c y -\/o del compilador gcc?}} ~\newline
+
+
+La bandera -\/I se utiliza para agregar headers adicionales al compilador, la bandera -\/c se utiliza para compilar un archiov fuente pero sin enlace, haciendo que el resultado sea un archivo de tipo objeto y por ultimo, la bandera -\/o, hace que el ejecutable tenga un nombre en especifico.
+
+{\bfseries{5. ¿\+Cómo se definen y se utilizan las variables en un Makefile? ¿\+Qué utilidad tienen?}} ~\newline
+
+
+Las variables se definen mediante la definicion de ellas y se le agrega $\ast$$\ast$\+:$\ast$$\ast$, el resto del codigo sera la descripcion de variable. Las variables se utilizan mediante el caracter \$, esto para poder modificar las variables como se desee en el makefile, por ejemplo, si se desean agregar archivos fuentes, solo se debe de modificar la variable en vez de todo el makefile.
+
+{\bfseries{6. ¿\+Qué utilidad tiene un @ en un Makefile?}} ~\newline
+
+
+El carcter @ posee la utilidad de hacer que no se impriman los comandos ejecutados en la consola. Es meramente estetico.
+
+{\bfseries{7. ¿\+Para qué se utiliza .PHONY en un Makefile?}} ~\newline
+
+
+El .PHONY indica que ciertos nombres de targets no representan archivos, cuando se marca un archivo como PHONY se indica que este siempre debe de ser ejecutado. 
