@@ -2,9 +2,9 @@
 #include <regex>
 #include <stdexcept>
 
+/// @brief Consigue el correo de la persona para poder asignarlo al objeto
 void ValidarEmail::conseguirCorreo(){
     std::string correo_comprobar;
-
     std::cout << "Ingresa el correo que deseas validar" << std::endl;
     std::cin.ignore();
     getline(std::cin,correo_comprobar);
@@ -13,13 +13,16 @@ void ValidarEmail::conseguirCorreo(){
 
 }
 
+/// @brief Esta es la funcion que valida el correo que ingresa el usuario
 void ValidarEmail::validarCorreo(){
     bool valido = false;
     std::regex patron(R"(([A-Za-z0-9._%+-]+)@([A-Za-z0-9.-]+?)\.([A-Za-z]{2,}(?:\.[A-Za-z]{2,})?))");
     std::smatch partes;
 
-   bool encontrado = std::regex_search(correo, partes, patron);
-
+    //Booleano para poder separar el correo en partes
+    bool encontrado = std::regex_search(correo, partes, patron);
+    
+    //Variable regex para poder encontrar el @ en el correo
     std::regex arroba_regex(R"(@)");  
 
     if (!std::regex_search(correo, arroba_regex)) {
@@ -38,11 +41,12 @@ void ValidarEmail::validarCorreo(){
     }catch(const std::exception &e){
         std::cerr << "Error encontrado: " << e.what() << std::endl;
         return;
+    }catch(...){
+        std::cerr << "Error desconocido" << std::endl;
+        valido = true;
     }
 
-    //validacion de nombre 
-
-    std::cout << nombre << std::endl;
+    //Validacion de nombre 
     try{
         //Reconoce el patron final e inicial que no tenga caracteres no permitidos
         std::regex patron_inicio_final(R"(^[a-zA-Z0-9].*[a-zA-Z0-9]$)");
@@ -50,13 +54,17 @@ void ValidarEmail::validarCorreo(){
         //Reconoce que no tenga los caracteres especiales
         std::regex patron_caracteres_especiales(R"(([_.-]{2,}))");
 
+        //Reconoce si hay caracteres invalidos al inicio o al final
         bool condicion1 = std::regex_match(nombre,patron_inicio_final);
 
+        //Reconoce los caracteres especiales en el nombre
         bool condicion2 = std::regex_search(nombre, patron_caracteres_especiales);
 
+        //Funciona para poder encontrar la longitud del nombre
         int contador;
         contador = nombre.length();
 
+        //Condiciones para poder agarrar las excepciones
         if(contador > 15){
             throw std::length_error("El nombre posee mas de 15 caracteres");
         }
@@ -76,13 +84,34 @@ void ValidarEmail::validarCorreo(){
         valido = true;
     }
 
-    //validacion del dominio:
+    //Validacion de dominio
 
-    std::cout << dominio << std::endl;
+    //Rstringe la longitud del dominio
+    int longitud_dominio;
 
+    try{
+    longitud_dominio =  dominio.length();
+
+    if (longitud_dominio > 30 || longitud_dominio < 3){
+        throw std::invalid_argument("El dominio tiene o menos de 3 letras o mas de 30");
+    }
+    // Busca caracteres no permitidos en el dominio
+    std::regex caracteres("^[a-zA-Z]+$");
+
+    bool condicion3 = std::regex_match(dominio, caracteres);
+
+    //Condiciones para poder agarrar las excepciones
+    if(!condicion3){
+        throw std::invalid_argument("El dominio no debe contener ni numeros ni caracteres especiales");
+    }
+    }catch(const std::exception&e){
+        std::cerr << "Error encontrado: " << e.what() << std::endl;
+        return;
+    }catch(...){
+        std::cerr << "Error desconocido" << std::endl;
+        valido = true;
+    }
     //validacion de extension
-
-    std::cout << extension << std::endl;
     
     try {
         // Esta expresión regular verifica que cada segmento de la extensión tenga entre 2 y 6 letras.
@@ -101,11 +130,11 @@ void ValidarEmail::validarCorreo(){
 
         // Verificar que la longitud de cada segmento sea correcta
         std::istringstream stream(extension);
-        std::string segment;
-        while (getline(stream, segment, '.')) {
-            if (segment.empty()) continue;  // Ignora segmentos vacíos 
-            if (segment.length() < 2 || segment.length() > 6) {
-                throw std::runtime_error("Segmento de extensión '" + segment + "' no tiene la longitud adecuada (2-6 caracteres).");
+        std::string segmento;
+        while (getline(stream, segmento, '.')) {
+            if (segmento.empty()) continue;  // Ignora segmentos vacíos 
+            if (segmento.length() < 2 || segmento.length() > 6) {
+                throw std::runtime_error("Segmento de extensión '" + segmento + "' no tiene la longitud adecuada (2-6 caracteres).");
             }
         }
 
@@ -113,6 +142,9 @@ void ValidarEmail::validarCorreo(){
         std::cerr << "Error encontrado en la extensión: " << e.what() << std::endl;
         valido = true;  // Asumimos que valido es una variable booleana de control
         return;
+    }catch(...){
+        std::cerr << "Error desconocido" << std::endl;
+        valido = true;
     }
 
 
