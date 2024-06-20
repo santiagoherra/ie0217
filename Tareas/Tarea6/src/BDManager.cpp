@@ -10,8 +10,6 @@
 int BDManager::menu(){
      try {
         // Crear el driver y la conexión
-        sql::mysql::MySQL_Driver *driver;
-        sql::Connection *con;
         driver = sql::mysql::get_mysql_driver_instance();
         con = driver->connect("tcp://127.0.0.1:3306", "tato", "HDSkhkdhsafHD1!2@3#");
 
@@ -20,6 +18,7 @@ int BDManager::menu(){
 
      }catch (sql::SQLException &e) {
         std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
+        con = nullptr;
     }
 
     return 0;
@@ -27,7 +26,11 @@ int BDManager::menu(){
     
 }
 
-void BDManager::crear(const std::string& sigla, const std::string& nombre, int semestre, int creditos, const std::string& descripcion){
+void BDManager::crear(const std::string& sigla, const std::string& nombre, int semestre, int creditos,
+                      const std::string& descripcion){
+    
+    
+
     try {
         sql::PreparedStatement *pstmt = con->prepareStatement("INSERT INTO Cursos (Sigla, Nombre, Semestre, Creditos, Descripcion)"
                                                                 "VALUES (?, ?, ?, ?, ?)");
@@ -35,26 +38,46 @@ void BDManager::crear(const std::string& sigla, const std::string& nombre, int s
         pstmt->setString(2, nombre);
         pstmt->setInt(3, semestre);
         pstmt->setInt(4, creditos);
-        pstmt->setString(5, descripcion);
         pstmt->execute();
         delete pstmt;
+
     } catch (sql::SQLException &e) {
         std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
     }
 
-}
+    try{
+        sql::PreparedStatement *pstmt = con->prepareStatement("INSERT INTO Descripciones (Sigla, Nombre, Semestre, Creditos, Descripcion)"
+                                                                "VALUES (?, ?, ?, ?, ?)");
+        pstmt->setString(1, sigla);
+        pstmt->setString(2, nombre);
+        pstmt->setInt(3, semestre);
+        pstmt->setInt(4, creditos);
+        pstmt->execute();
+        delete pstmt;
 
-void BDManager::leer(){
+    } catch (sql::SQLException &e) {
+        std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
+    }
+
+};
+
+void BDManager::leer(int cursoID){
+    if (con == nullptr) {
+        std::cerr << "ERROR: No database connection" << std::endl;
+    }
+
     try {
         sql::Statement *stmt = con->createStatement();
-        sql::ResultSet *res = stmt->executeQuery("SELECT * FROM Cursos");
+        sql::ResultSet *res = stmt->executeQuery("SELECT c.CursoID, c.Sigla, c.Nombre, c.Semestre, c.Creditos, d.Descripcion "
+            "FROM Cursos c "
+            "LEFT JOIN Descripciones d ON c.CursoID = d.CursoID");
         while (res->next()) {
             std::cout << "CursoID = " << res->getInt("CursoID")
-                      << ", Sigla = " << res->getString("Sigla")
-                      << ", Nombre = " << res->getString("Nombre")
-                      << ", Semestre = " << res->getInt("Semestre")
-                      << ", Creditos = " << res->getInt("Creditos")
-                      << ", Descripcion = " << res->getString("Descripcion")
+                      << "\nSigla = " << res->getString("Sigla")
+                      << "\nNombre = " << res->getString("Nombre")
+                      << "\nSemestre = " << res->getInt("Semestre")
+                      << "\nCreditos = " << res->getInt("Creditos")
+                      << "\nDescripcion = " << res->getString("Descripcion")
                       << std::endl;
         }
         delete res;
@@ -62,7 +85,32 @@ void BDManager::leer(){
     } catch (sql::SQLException &e) {
        std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
     }
+
+    try {
+        sql::PreparedStatement *pstmt = con->prepareStatement(
+            "SELECT c.CursoID, c.Sigla, c.Nombre, r.RequisitoCursoID "
+            "FROM Cursos c "
+            "JOIN Requisitos r ON c.CursoID = r.CursoID "
+            "WHERE c.CursoID = ?"
+        );
+        pstmt->setInt(1, cursoID);
+
+        sql::ResultSet *res = pstmt->executeQuery();
+        while (res->next()) {
+            std::cout << "CursoID = " << res->getInt("CursoID")
+                      << ", Sigla = " << res->getString("Sigla")
+                      << ", Nombre = " << res->getString("Nombre")
+                      << ", RequisitoCursoID = " << res->getInt("RequisitoCursoID")
+                      << std::endl;
+        }
+
+        delete res;
+        delete pstmt;
+    } catch (sql::SQLException &e) {
+        std::cerr << "ERROR: SQLException in consultarRequisitos: " << e.what() << std::endl;
+    }
 }
+
 
 void BDManager::actualizar(int cursoID, const std::string& descripcion, const std::string& dificultad){
     try {
