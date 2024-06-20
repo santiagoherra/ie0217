@@ -164,13 +164,11 @@ void BDManager::actualizarOptativos(int cursoID, const std::string& nombre, int 
 }
 
 void BDManager::actualizarExistentes(int cursoID, const std::string& descripcion, const std::string& dificultad){
-    
-}
-
-void BDManager::eliminar(const std::string &sigla){
     try {
-        sql::PreparedStatement *pstmt = con->prepareStatement("DELETE FROM Cursos WHERE Sigla = ?");
-        pstmt->setString(1, sigla);
+        sql::PreparedStatement *pstmt = con->prepareStatement("UPDATE Descripciones SET Descripcion = ?, Dificultad = ? WHERE CursoID = ?");
+        pstmt->setString(1, descripcion);
+        pstmt->setString(2, dificultad);
+        pstmt->setInt(3, cursoID);
         pstmt->execute();
         delete pstmt;
     } catch (sql::SQLException &e) {
@@ -178,3 +176,36 @@ void BDManager::eliminar(const std::string &sigla){
     }
 }
 
+void BDManager::eliminar(int cursoID){
+    try {
+        //Eliminar el requisito
+        sql::PreparedStatement *pstmtRequisito = con->prepareStatement(
+            "DELETE FROM Requisitos WHERE RequisitoCursoID = ?"
+        );
+        pstmtRequisito->setInt(1, cursoID);
+        pstmtRequisito->execute();
+        delete pstmtRequisito;
+
+        // Eliminar la descripción del curso en Descripciones
+        sql::PreparedStatement *pstmtDescripcion = con->prepareStatement(
+            "DELETE FROM Descripciones WHERE CursoID = ?"
+        );
+        pstmtDescripcion->setInt(1, cursoID);
+        pstmtDescripcion->execute();
+        delete pstmtDescripcion;
+
+        // Eliminar el curso en Cursos
+        sql::PreparedStatement *pstmtCurso = con->prepareStatement(
+            "DELETE FROM Cursos WHERE CursoID = ?"
+        );
+        pstmtCurso->setInt(1, cursoID);
+        pstmtCurso->execute();
+        delete pstmtCurso;
+
+
+        std::cout << "Curso y su descripción eliminados exitosamente." << std::endl;
+
+    } catch (sql::SQLException &e) {
+        std::cerr << "ERROR: SQLException in eliminarCursoYDescripcion: " << e.what() << std::endl;
+    }
+}

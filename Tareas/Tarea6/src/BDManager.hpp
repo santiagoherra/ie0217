@@ -29,7 +29,7 @@ class BDManager{
 
         void actualizarExistentes(int cursoID, const std::string& descripcion, const std::string& dificultad);
 
-        void eliminar(const std::string &sigla);
+        void eliminar(int cursoID);
 
     private:
         sql::mysql::MySQL_Driver *driver;
