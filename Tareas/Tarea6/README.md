@@ -9,7 +9,7 @@
 ### Ejecucion del programa 
 Primero asegurese de estar en la carpeta **src**. Despues en la terminal shell ingrese el comando.
 ```
-g++ -o ejecutable.exe ~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~~AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!!!!!!!!!!!!!!!!!!!!!!!!!
+g++ -o ejecutable.exe main.cpp BDManager.cpp -lmysqlcppconn 
 ```
 Esto le compilara el archivos para crearle el ejecutable **ejecutable.exe**. Para ejecutar el programa ingrese el comando.
 ```
