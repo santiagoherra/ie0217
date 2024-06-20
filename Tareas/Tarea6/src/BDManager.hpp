@@ -15,11 +15,19 @@ class BDManager{
 
         int menu();
 
-        void crear(const std::string& sigla, const std::string& nombre, int semestre, int creditos, const std::string& descripcion);
+        void crear(int cursoID, const std::string& sigla, const std::string& nombre,
+                   int semestre, int creditos, const std::string& descripcion,
+                   const std::string& dificultad);
 
-        void leer(int cursoID);
+        void leerTodos();
 
-        void actualizar(int cursoID, const std::string& descripcion, const std::string& dificultad);
+        void leerNoOptativos();
+
+        void leerEspecificos(int cursoID);
+
+        void actualizarOptativos(int cursoID, const std::string& nombre, int creditos);
+
+        void actualizarExistentes(int cursoID, const std::string& descripcion, const std::string& dificultad);
 
         void eliminar(const std::string &sigla);
 

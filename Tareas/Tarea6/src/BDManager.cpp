@@ -26,42 +26,47 @@ int BDManager::menu(){
     
 }
 
-void BDManager::crear(const std::string& sigla, const std::string& nombre, int semestre, int creditos,
-                      const std::string& descripcion){
+void BDManager::crear(int cursoID, const std::string& sigla, const std::string& nombre, int semestre, int creditos,
+                      const std::string& descripcion, const std::string& dificultad){
     
-    
+    if (con == nullptr) {
+        std::cerr << "ERROR: No database connection" << std::endl;
+        return;
+    }
 
     try {
-        sql::PreparedStatement *pstmt = con->prepareStatement("INSERT INTO Cursos (Sigla, Nombre, Semestre, Creditos, Descripcion)"
-                                                                "VALUES (?, ?, ?, ?, ?)");
-        pstmt->setString(1, sigla);
-        pstmt->setString(2, nombre);
-        pstmt->setInt(3, semestre);
-        pstmt->setInt(4, creditos);
-        pstmt->execute();
-        delete pstmt;
+        // Insertar el nuevo curso
+        sql::PreparedStatement *pstmtCurso = con->prepareStatement(
+            "INSERT INTO Cursos (CursoID, Sigla, Nombre, Semestre, Creditos) VALUES (?, ?, ?, ?, ?)"
+        );
+        pstmtCurso->setInt(1, cursoID);
+        pstmtCurso->setString(2, sigla);
+        pstmtCurso->setString(3, nombre);
+        pstmtCurso->setInt(4, semestre);
+        pstmtCurso->setInt(5, creditos);
+        pstmtCurso->execute();
+        delete pstmtCurso;
+
+        // Insertar la descripción del nuevo curso
+        sql::PreparedStatement *pstmtDescripcion = con->prepareStatement(
+            "INSERT INTO Descripciones (DescripcionID, CursoID, Descripcion, Dificultad) VALUES (?, ?, ?, ?)"
+        );
+        pstmtDescripcion->setInt(1, cursoID); // Asumiendo que DescripcionID es el mismo que CursoID
+        pstmtDescripcion->setInt(2, cursoID);
+        pstmtDescripcion->setString(3, descripcion);
+        pstmtDescripcion->setString(4, dificultad);
+        pstmtDescripcion->execute();
+        delete pstmtDescripcion;
+
+        std::cout << "Curso y descripción agregados exitosamente." << std::endl;
 
     } catch (sql::SQLException &e) {
-        std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
+        std::cerr << "ERROR: SQLException in agregarCursoYDescripcion: " << e.what() << std::endl;
     }
+}
 
-    try{
-        sql::PreparedStatement *pstmt = con->prepareStatement("INSERT INTO Descripciones (Sigla, Nombre, Semestre, Creditos, Descripcion)"
-                                                                "VALUES (?, ?, ?, ?, ?)");
-        pstmt->setString(1, sigla);
-        pstmt->setString(2, nombre);
-        pstmt->setInt(3, semestre);
-        pstmt->setInt(4, creditos);
-        pstmt->execute();
-        delete pstmt;
 
-    } catch (sql::SQLException &e) {
-        std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
-    }
-
-};
-
-void BDManager::leer(int cursoID){
+void BDManager::leerTodos(){
     if (con == nullptr) {
         std::cerr << "ERROR: No database connection" << std::endl;
     }
@@ -73,17 +78,23 @@ void BDManager::leer(int cursoID){
             "LEFT JOIN Descripciones d ON c.CursoID = d.CursoID");
         while (res->next()) {
             std::cout << "CursoID = " << res->getInt("CursoID")
-                      << "\nSigla = " << res->getString("Sigla")
-                      << "\nNombre = " << res->getString("Nombre")
-                      << "\nSemestre = " << res->getInt("Semestre")
-                      << "\nCreditos = " << res->getInt("Creditos")
-                      << "\nDescripcion = " << res->getString("Descripcion")
+                      << ", Sigla = " << res->getString("Sigla")
+                      << ", Nombre = " << res->getString("Nombre")
+                      << ", Semestre = " << res->getInt("Semestre")
+                      << ", Creditos = " << res->getInt("Creditos")
+                      << ", Descripcion = " << res->getString("Descripcion")
                       << std::endl;
         }
         delete res;
         delete stmt;
     } catch (sql::SQLException &e) {
        std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
+    }
+}
+
+void BDManager::leerEspecificos(int cursoID){
+    if (con == nullptr) {
+        std::cerr << "ERROR: No database connection" << std::endl;
     }
 
     try {
@@ -111,18 +122,49 @@ void BDManager::leer(int cursoID){
     }
 }
 
+void BDManager::leerNoOptativos(){
+    if (con == nullptr) {
+        std::cerr << "ERROR: No database connection" << std::endl;
+    }
 
-void BDManager::actualizar(int cursoID, const std::string& descripcion, const std::string& dificultad){
     try {
-        sql::PreparedStatement *pstmt = con->prepareStatement("UPDATE Cursos SET Descripcion = ?, Dificultad = ? WHERE CursoID = ?");
-        pstmt->setString(1, descripcion);
-        pstmt->setString(2, dificultad);
+        sql::Statement *stmt = con->createStatement();
+        sql::ResultSet *res = stmt->executeQuery("SELECT * FROM Cursos WHERE Sigla NOT LIKE 'IE'");
+        
+        while (res->next()) {
+            std::cout << "CursoID = " << res->getInt("CursoID")
+                      << ", Sigla = " << res->getString("Sigla")
+                      << ", Nombre = " << res->getString("Nombre")
+                      << ", Semestre = " << res->getInt("Semestre")
+                      << ", Creditos = " << res->getInt("Creditos")
+                      << std::endl;
+        }
+
+        delete res;
+        delete stmt;
+    } catch (sql::SQLException &e) {
+        std::cerr << "ERROR: SQLException in consultarCursosNoOptativos: " << e.what() << std::endl;
+    }
+}
+
+
+
+
+void BDManager::actualizarOptativos(int cursoID, const std::string& nombre, int creditos){
+    try {
+        sql::PreparedStatement *pstmt = con->prepareStatement("UPDATE Cursos SET Nombre = ?, Creditos = ? WHERE CursoID = ?");
+        pstmt->setString(1, nombre);
+        pstmt->setInt(2, creditos);
         pstmt->setInt(3, cursoID);
         pstmt->execute();
         delete pstmt;
     } catch (sql::SQLException &e) {
         std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
     }
+}
+
+void BDManager::actualizarExistentes(int cursoID, const std::string& descripcion, const std::string& dificultad){
+    
 }
 
 void BDManager::eliminar(const std::string &sigla){

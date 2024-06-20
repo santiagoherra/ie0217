@@ -5,7 +5,11 @@ int main(){
 
     manager.menu();
 
-    manager.leer();
+    manager.leerTodos();
+
+    manager.leerEspecificos(1);
+
+    manager.leerNoOptativos();
 
     return 0;
 }
