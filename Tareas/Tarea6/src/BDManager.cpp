@@ -36,4 +36,45 @@ void BDManager::crear(const std::string& sigla, const std::string& nombre, int s
         pstmt->setString(5, descripcion);
         pstmt->execute();
         delete pstmt;
+    } catch (sql::SQLException &e) {
+        std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
+    }
+
+}
+
+void BDManager::leer(){
+    try {
+        sql::Statement *stmt = con->createStatement();
+        sql::ResultSet *res = stmt->executeQuery("SELECT * FROM Cursos");
+        while (res->next()) {
+            std::cout << "CursoID = " << res->getInt("CursoID")
+                      << ", Sigla = " << res->getString("Sigla")
+                      << ", Nombre = " << res->getString("Nombre")
+                      << ", Semestre = " << res->getInt("Semestre")
+                      << ", Creditos = " << res->getInt("Creditos")
+                      << ", Descripcion = " << res->getString("Descripcion")
+                      << std::endl;
+        }
+        delete res;
+        delete stmt;
+    } catch (sql::SQLException &e) {
+       std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
+    }
+}
+
+void BDManager::actualizar{
+    try {
+        sql::PreparedStatement *pstmt = con->prepareStatement("UPDATE Cursos SET Descripcion = ?, Dificultad = ? WHERE CursoID = ?");
+        pstmt->setString(1, descripcion);
+        pstmt->setString(2, dificultad);
+        pstmt->setInt(3, cursoID);
+        pstmt->execute();
+        delete pstmt;
+    } catch (sql::SQLException &e) {
+        std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
+    }
+}
+
+void BDManager::eliminar(){
+
 }
