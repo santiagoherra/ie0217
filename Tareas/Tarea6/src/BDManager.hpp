@@ -7,13 +7,17 @@ class BDManager{
 
         int menu();
 
-        void crear();
+        void crear(const std::string& sigla, const std::string& nombre, int semestre, int creditos, const std::string& descripcion);
 
         void leer();
 
-        void actualizar();
+        void actualizar(int cursoID, const std::string& descripcion, const std::string& dificultad);
 
-        void eliminar();
+        void eliminar(const std::string &sigla);
+
+    private:
+        sql::mysql::MySQL_Driver *driver;
+        sql::Connection *con;
 
     
 };

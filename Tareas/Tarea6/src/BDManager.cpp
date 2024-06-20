@@ -1,6 +1,7 @@
 #include <mysql_driver.h>
 #include <mysql_connection.h>
 #include <cppconn/statement.h>
+#include <cppconn/prepared_statement.h>
 #include <cppconn/resultset.h>
 #include <cppconn/exception.h>
 #include <iostream>
@@ -21,8 +22,9 @@ int BDManager::menu(){
         std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
     }
 
+    return 0;
 
- 
+    
 }
 
 void BDManager::crear(const std::string& sigla, const std::string& nombre, int semestre, int creditos, const std::string& descripcion){
@@ -62,7 +64,7 @@ void BDManager::leer(){
     }
 }
 
-void BDManager::actualizar{
+void BDManager::actualizar(int cursoID, const std::string& descripcion, const std::string& dificultad){
     try {
         sql::PreparedStatement *pstmt = con->prepareStatement("UPDATE Cursos SET Descripcion = ?, Dificultad = ? WHERE CursoID = ?");
         pstmt->setString(1, descripcion);
@@ -75,6 +77,14 @@ void BDManager::actualizar{
     }
 }
 
-void BDManager::eliminar(){
-
+void BDManager::eliminar(const std::string &sigla){
+    try {
+        sql::PreparedStatement *pstmt = con->prepareStatement("DELETE FROM Cursos WHERE Sigla = ?");
+        pstmt->setString(1, sigla);
+        pstmt->execute();
+        delete pstmt;
+    } catch (sql::SQLException &e) {
+        std::cerr << "ERROR: SQLException: " << e.what() << std::endl;
+    }
 }
+
